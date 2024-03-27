@@ -1,0 +1,24 @@
+.notification{
+    padding: 0 20rem;
+    padding-bottom: 7rem;
+}
+
+.notification h1{
+    padding-top: 5rem;
+font-size: 35px;
+}
+
+.notification p{
+    text-align: justify;
+    padding-right: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    color:#28A6FF
+}
+
+.notification-btn button{
+    background-color: #fff;
+    border: 1px solid #28A6FF;
+    height: 40px;
+    width: 130px;
+}

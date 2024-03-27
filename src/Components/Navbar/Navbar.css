@@ -1,0 +1,25 @@
+#common-home-navbar {
+    padding: 0 50px;
+    height: 80px;
+  
+    background-color: #75D7F0 !important;
+  }
+
+  
+
+  #common-home-navbar a:hover {
+    color: violet !important;
+    font-weight: bold;
+  }
+
+.usernav-links{
+    padding-right: 30px;
+    margin-top: 12px;
+}
+
+  .usernav-links a{
+    font-weight: 600;
+    color:#fff;
+    text-decoration: none;
+   padding-left: 20px;
+  }

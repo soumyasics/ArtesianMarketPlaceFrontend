@@ -1,0 +1,107 @@
+.footer{
+    padding-top: 2.5rem;
+    background-color:#bdc5c8;
+    height: 550px;
+    margin: 0;
+    /* width: 100%; */
+    
+}
+
+.footer-content p{
+    font-size: 23px;
+}
+
+.footer-content p span{
+font-weight: 800;
+}
+
+.footer-logo{
+display: flex;
+padding: 0 5px;
+/* margin-top: 0.9rem; */
+}
+
+.footer-logo p{
+    font-weight: 600;
+    font-size: 15px;
+color: #fff;
+margin-top: 3px;
+}
+.iconlogo{
+    color: #fff;
+    height: 30px;
+    width:30px
+}
+
+.footer-image{
+    width:300px ;
+height:400px;
+margin: auto;
+}
+
+.footer-image img{
+width:300px ;
+height:400px;
+border:20px solid black;
+box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-container{
+padding: 0 8rem;
+}
+
+
+
+.footer-image p{
+    color: #004170;
+    /* margin-left: 120px; */
+    font-weight: 500;
+font-size: 25px;
+text-align: center;
+}
+
+.footer-links{
+    display:flex;
+    margin-top: 13rem;
+}
+
+.footer-links a{
+    padding: 0 7px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 550;
+}
+
+.footer-links a:hover{
+    color: #004170;
+    font-weight: 600;
+}
+
+.footer-icons{
+    margin-top: 20px;
+}
+.staricon{
+    height: 23px;
+    width:23px
+}
+
+.footer-artistname{
+    margin-top: 23px;
+    font-size: 22px;
+    font-weight: 500;
+}
+.footer-artistname span{
+    color: #fff;
+    font-weight: 600;
+}
+.footer-credits{
+    margin-top: 4.5rem;
+    margin-left: 15rem;
+    font-size: 12px;
+    font-weight: 600;
+    color: #fff;
+}
+.footer-credits span{
+    color: #106EB1;
+}

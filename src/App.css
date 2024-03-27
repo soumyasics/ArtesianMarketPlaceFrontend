@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.error{
+    margin: 0;
+    color: rgb(215, 3, 3);
+}

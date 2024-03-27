@@ -1,0 +1,108 @@
+.UserProfile{
+    padding-bottom: 10rem;
+}
+.Cover-img{
+    height: 600px;
+   
+
+    background-image: url("../../../../Assets/Slide.png");
+    background-repeat: no-repeat;
+}
+
+.Cover-img h1{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+   
+}
+
+.userphoto img{
+    height:200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.userprofile-img{
+    position: absolute;
+    top:33rem;
+    left:36em
+}
+
+.userprofile-text{
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 13px;
+    height: 35px;
+    width: 100%;
+    background-color: #28A6FF;
+}
+
+.userprofile-text p{
+margin-top: 5px;
+color: #fff;
+}
+
+.username{
+    padding: 0 60px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    font-size: 25px;
+}
+
+.userprofile-content{
+    text-align: center;
+    padding-left:25rem;
+    padding-right: 25rem;
+    padding-top: 10rem;
+    
+}
+
+.userprofile-details{
+    padding-top: 40px;
+height: 400px;
+width: 42%;
+margin:auto
+
+}
+
+.userprofileinput{
+    
+    border: 2px solid transparent ;
+height:30px;
+    background-color: #F3FAFF;
+    margin-bottom: 10px;
+}
+
+.userprofileinput p{
+   
+    padding: 0 10px;
+}
+.userprofileinput2{
+    border: 2px solid transparent ;
+    height:100px;
+        background-color: #F3FAFF;
+        margin-bottom: 10px;
+}
+.userprofileinput2 p{
+    padding: 0 10px;
+    padding-top: 5px;
+}
+.userprofilebutton{
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+
+.userprofilebutton button{
+    background-color: #ffff;
+height: 30px;
+width: 100px;
+border: 1px solid #28A6FF;
+margin-right: 15px;
+
+/* margin-left: 29rem; */
+}

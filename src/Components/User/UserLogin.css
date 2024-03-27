@@ -1,0 +1,156 @@
+.user_reg {
+  background: linear-gradient(
+      180deg,
+      rgba(117, 215, 240, 0.5) 0%,
+      rgba(195, 241, 253, 0.6) 100%
+    ),
+    url(../../Assets/reg-bg.png);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding-top: 35px;
+}
+
+.user_reg_box {
+  width: 1023.891px;
+  height: 634.174px;
+  background-color: antiquewhite;
+  margin: auto;
+}
+
+.user_reg_box1 {
+  background-color: #82cbff;
+}
+
+.user_reg_box1_logo {
+  width: 124px;
+  margin: auto;
+}
+
+.user_reg_box1_logo img {
+  margin-top: 8rem;
+}
+
+.user_reg_name h3 {
+  color: #f5ebff;
+  font-size: 49.013px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 5rem;
+  text-align: center;
+}
+.user_reg_name p {
+  color: #f5e7ff;
+  font-family: Noto Sans;
+  font-size: 22.324px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+
+.user_reg_box2 {
+  background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.5) 0%,
+      /* Black with 30% opacity */ rgba(0, 0, 0, 0.3) 100%
+    ),
+    url(../../Assets/reg-bg.png);
+}
+
+.user_log_box_white {
+  width: 372.166px;
+  height: 311.106px;
+  background-color: #ffff;
+  margin: auto;
+  padding: 20px 30px;
+  /* overflow-y: auto; */
+}
+
+.user_log_box_blue {
+  display: flex;
+  width: 372px;
+  height: 59px;
+  background-color: #28a6ff;
+  margin: 140px auto 0 auto;
+  padding: 20px 30px;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.user_log_box_blue p {
+  color: #fff;
+
+  text-align: center;
+  font-family: Noto Sans;
+  font-size: 12px;
+  font-style: normal;
+  /* font-weight: 400; */
+  line-height: normal;
+}
+
+.user_reg_title {
+  font-size: 21.835px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #82cbff;
+  text-align: center;
+}
+
+.user_inp {
+  border: 1px solid #28a6ff;
+  border-radius: none;
+}
+
+.user_reg_btn {
+  width: 168px;
+  margin: auto;
+}
+
+.user_reg_btn button {
+  display: flex;
+  width: 168px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffff;
+  border: 1px solid #28a6ff;
+}
+
+.user_reg_link p {
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.login_icon_input {
+  padding-left: 30px;
+  background: url("../../Assets/user-fill.png") no-repeat 5px center;
+  background-size: 20px;
+}
+.password_icon_input {
+  padding-left: 30px;
+  background: url("../../Assets/lock-fill.png") no-repeat 5px center;
+  background-size: 20px;
+}
+
+.user_log_forgot_pass {
+  text-align: center;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  color: #28a6ff;
+}
+
+.user_log_box_blue a {
+  text-decoration: none;
+}

@@ -1,0 +1,96 @@
+.About{
+    text-align: justify;
+}
+.About h1{
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+
+}
+
+.About p{
+    padding:0 23rem;
+}
+
+.aboutimg img{
+    width:40%;
+    margin-left:  25rem;
+}
+
+.about-content{
+   padding-top: 20px; 
+   padding-bottom: 30px;
+}
+
+.aboutimg2{
+
+display: flex;
+justify-content: center;
+height: 15rem;
+}
+
+.aboutimg2 img{
+    
+    margin-left: 1rem;
+    
+}
+
+.about-content2{
+    padding-top: 50px; 
+   
+}
+
+.about-content2 h1{
+    padding-bottom: 20px;
+}
+
+
+.about-content2 p{
+    padding:0 23rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+}
+.about-content2 h2{
+  color: #073D64;
+    text-align: center;
+padding: 0 22rem;
+    font-size: 20px;
+   
+}
+
+#featured-artist h1{
+    text-align: center;
+}
+
+#featured-artist h2{
+    color: #073D64;
+    text-align: center;
+padding: 0 21rem;
+    font-size: 20px;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+
+.featured-artist-details{
+    display: flex;
+    justify-content: center;
+}
+
+.featured-artistimg img{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+}
+
+#featured-artist .featured-artistimg{
+    padding: 0 4rem;
+height: 15rem;
+}
+
+
+
+.featured-artistimg h1{
+    padding-top: 10px;
+    font-size: 15px;
+}

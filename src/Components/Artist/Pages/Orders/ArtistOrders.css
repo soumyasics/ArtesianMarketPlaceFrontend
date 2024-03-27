@@ -1,0 +1,8 @@
+.orders{
+  background-image: url("../../../../Assets/Admin\ bg.png");
+   height : 1000px
+}
+
+.orders-table{
+  padding: 0 3rem;
+}

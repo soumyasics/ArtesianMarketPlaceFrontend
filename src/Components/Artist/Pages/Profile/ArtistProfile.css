@@ -1,0 +1,105 @@
+.artistProfile{
+    background-image: url("../../../../Assets/Admin\ bg.png");
+    height : 1000px;
+    padding: 0 3rem;
+}
+
+
+
+
+/* .Cover-img h1{
+    display: flex;
+    height: 600px;
+    justify-content: center;
+    align-items: center;
+    color:#fff;
+   
+} */
+
+.artistphoto img{
+    height:200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+.artistprofile-img{
+    position: absolute;
+    bottom:16.5rem;
+    left:43rem
+}
+
+.artistprofile-text{
+    text-align: center;
+    border: 2px solid transparent;
+    border-radius: 13px;
+    height: 35px;
+    width: 100%;
+    background-color: #28A6FF;
+}
+
+.artistprofile-text p{
+margin-top: 5px;
+color: #fff;
+}
+
+.artistname{
+    padding: 0 60px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    font-size: 25px;
+}
+
+.artistprofile-content{
+    text-align: center;
+   padding: 0 17.8rem;
+    padding-top: 22rem;
+    
+}
+
+.artistprofile-details{
+    padding-top: 40px;
+height: 400px;
+width: 70%;
+margin:auto
+
+}
+
+.artistprofileinput{
+    
+    border: 2px solid transparent ;
+height:30px;
+    background-color: #F3FAFF;
+    margin-bottom: 10px;
+}
+
+.artistprofileinput p{
+   
+    padding: 0 10px;
+}
+.artistprofileinput2{
+    border: 2px solid transparent ;
+    height:100px;
+        background-color: #F3FAFF;
+        margin-bottom: 10px;
+}
+.artistprofileinput2 p{
+    padding: 0 10px;
+    padding-top: 5px;
+}
+.artistprofilebutton{
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+    
+
+}
+
+.artistprofilebutton button{
+    background-color: #ffff;
+height: 30px;
+width: 100px;
+border: 1px solid #28A6FF;
+margin-right: 15px;
+
+/* margin-left: 29rem; */
+}
