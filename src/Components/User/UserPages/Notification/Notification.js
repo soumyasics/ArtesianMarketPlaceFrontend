@@ -2,11 +2,13 @@ import React from 'react'
 import Navbar from '../../../Navbar/Navbar'
 import Footer from '../../../Footer/Footer'
 import "./Notification.css"
+import Usernav from '../../../Navbar/Usernav'
+import NavMain from '../../../Navbar/NavMain'
 
 function Notification() {
     return (
         <>
-            <Navbar />
+            <NavMain />
 
             <section className='Cover-img'>
                 <h1>Messages</h1>

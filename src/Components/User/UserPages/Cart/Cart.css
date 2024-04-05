@@ -1,0 +1,132 @@
+.Cart h1{
+    text-align: center;
+    padding-bottom: 1rem;
+}
+
+.Cart p{
+    
+    text-align: center;
+    padding: 0 25rem;
+}
+
+.cart-items{
+    padding: 0 12rem;
+    padding-top: 5rem;
+}
+
+.cart-items h4{
+    font-size: 20px;
+   
+}
+
+.cart-table img{
+height:60px;
+width: 100px;
+}
+
+#cartitemscolb{
+    display: flex;
+    
+}
+
+#cartitemscolb h3{
+    margin-top: 12px;
+    padding-left: 2rem;
+}
+
+#cart-total{
+    margin-left: 30rem;
+}
+
+.cart-grandtotal{
+    padding-top: 1rem;
+   margin-left: 47rem;
+}
+
+#rupees{
+font-weight: 600;
+}
+#total{
+    font-size: 15px;
+}
+
+.cart-table th{
+    border-bottom: 1px solid lightgrey;
+    padding-bottom: 10px;
+}
+
+.cart-table td{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid lightgrey;
+    color: #106EB1;
+    
+}
+
+.cart-table td a{
+    text-decoration: none;
+}
+
+.add{
+height: 15px;
+width: 15px;    
+}
+
+.itemdelivery {
+text-align: center;
+padding-top: 3rem;
+} 
+
+
+.itemdelivery label{
+    padding-left: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    
+}
+
+.cart-shipping-address{
+    padding-top: 2rem;
+    
+}
+.cart-shipping-address h1{
+    font-size: 25px;
+}
+.cart-shipping-address p{
+    color: #073D64;
+}
+
+.cart-input{
+    padding-top: 1rem;
+margin-left: 26.5rem;
+}
+
+.cart-input input{
+    height: 2.5rem;
+  width: 54%;
+  outline: none;
+  padding: 0 20px;
+ 
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-top-width: 1.9px;
+  
+  transition: all 0.3s ease;
+}
+
+.cart-btn {
+padding-top: 3rem;
+margin-left: 36.5rem;
+padding-bottom: 5.5rem;
+
+}
+
+.cart-btn button{
+    background-color: #fff;
+    border: 1px solid #28A6FF;
+    height: 30px;
+    width: 170px;
+    font-size: 15px;
+}

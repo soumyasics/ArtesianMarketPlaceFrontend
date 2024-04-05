@@ -2,6 +2,7 @@ import React from 'react'
 import "./Navbar.css"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Home Logo.png"
+import Profileimg from "../../Assets/aubrey-graham-photo-u164.jpg"
 
 
 function Navbar() {
@@ -87,10 +88,14 @@ function Navbar() {
     <form class="d-flex usernav-links" role="search">
       <p><Link>Home</Link></p>
       <p><Link to ="/aboutus">About</Link></p>
-      <p><Link to ="/gallery">Gallery</Link></p>
-      
-      <p><Link to ="/user_profile">Profile</Link></p>
-    </form>
+      <p><Link to ="/user_login">Login</Link></p>
+
+
+ 
+ </form>
+
+ 
+ 
   </div>
 </nav>
 

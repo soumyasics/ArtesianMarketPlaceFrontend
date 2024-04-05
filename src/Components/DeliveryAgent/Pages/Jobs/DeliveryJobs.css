@@ -1,0 +1,34 @@
+.jobs{
+    padding: 0 5rem;
+    background-image: url("../../../../Assets/Admin\ bg.png");
+   
+    height: 800px;
+}
+.jobs-table{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+#delivery-place{
+    color:#106EB1 ;
+}
+
+#status{
+
+color: #85E0A3;
+font-weight: 600;
+}
+
+#status-icon{
+    color: #28A6FF;
+    font-weight: 600;
+}
+
+#status-icon select{
+    margin-top: 4.5rem;
+    border: none;
+    background-color: #f2f2f2;
+    color: #28A6FF;
+    font-weight: 600;
+}
+

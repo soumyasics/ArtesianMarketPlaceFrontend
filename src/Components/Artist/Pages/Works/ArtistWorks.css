@@ -1,0 +1,58 @@
+.works {
+
+    background-image: url("../../../../Assets/Admin\ bg.png");
+    padding: 0 5rem;
+    height: 800px;
+}
+
+.works-form h1 {
+    padding-top: 3rem;
+    font-size: 35px;
+}
+
+.works-list {
+    padding-bottom: 3rem;
+}
+
+.works-list h1 {
+    padding-top: 3rem;
+    font-size: 35px;
+}
+
+.works-input{
+    
+    padding-top: .5rem;
+}
+
+.works-input input{
+    height: 2.5rem;
+    width: 35%;
+    outline: none;
+    padding: 0 20px;
+    font-size: 17px;
+    font-weight: 400;
+    color: #333;
+    border: 1.5px solid #c7bebe;
+    border-top-width: 1.9px; 
+    transition: all 0.3s ease
+}
+
+.works-files{
+    padding-top: .5rem;
+
+}
+
+
+
+.works-btn{
+    padding-top: .5rem;
+}
+
+.works-btn button{
+    background-color: #28A6FF;
+    color: #fff;
+    height: 45px;
+    width: 140px;
+    border: 1px solid #28A6FF;
+    margin-right: 15px;
+}

@@ -3,12 +3,14 @@ import "./NotificationMain.css"
 import Navbar from '../../../Navbar/Navbar'
 import Footer from '../../../Footer/Footer'
 import { Link } from 'react-router-dom'
+import Usernav from '../../../Navbar/Usernav'
+import NavMain from '../../../Navbar/NavMain'
 
 function NotificationMain() {
     return (
 
         <>
-            <Navbar />
+            <NavMain/>
 
             <section className='Cover-img'>
                 <h1>Notification</h1>

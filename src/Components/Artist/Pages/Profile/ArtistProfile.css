@@ -2,10 +2,15 @@
     background-image: url("../../../../Assets/Admin\ bg.png");
     height : 1000px;
     padding: 0 3rem;
+    
 }
 
 
 
+
+.artistProfilepage{
+    padding-top: 3rem;
+}
 
 /* .Cover-img h1{
     display: flex;
@@ -24,7 +29,7 @@
 
 .artistprofile-img{
     position: absolute;
-    bottom:16.5rem;
+    bottom:13rem;
     left:43rem
 }
 

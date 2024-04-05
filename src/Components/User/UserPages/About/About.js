@@ -6,11 +6,13 @@ import images from "../../../../Assets/Rectangle 11.png"
 import image2 from "../../../../Assets/Rectangleabout.png"
 import image3 from "../../../../Assets/Rectangle 13.png"
 import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg"
+import Usernav from '../../../Navbar/Usernav'
+import NavMain from '../../../Navbar/NavMain'
 
 function About() {
     return (
         <>
-            <Navbar />
+            <NavMain/>
 
             <section className='Cover-img'>
                 <h1>About</h1>
