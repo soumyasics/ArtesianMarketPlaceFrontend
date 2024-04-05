@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import "../User/UserLogin.css";
 import logo from "../../Assets/logo.svg";
 import "../User/UserFP.css"
+import axios from 'axios';
+import axiosInstance from '../../Schemas/BaseUrl';
+import { toast } from 'react-toastify';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ArtistForgetPassword() {
   const [artistfp, setArtistfp] = useState({
@@ -25,10 +29,19 @@ function ArtistForgetPassword() {
   const formValidation = (fieldName, value) => {
 
     if (!value.trim()) { return `${fieldName} is required` }
+    if (fieldName === "Password" && value.length < 8) {
+      return "Password must be at least 8 characters long";
+    }
+    if (fieldName === "Password" && !/[A-Z]/.test(value)) {
+      return "Password must contain at least one uppercase letter";
+    }
+    if (fieldName === "Password" && !/\d/.test(value)) {
+      return "Password must contain at least one number";
+    }
     return ''
 
   }
-
+const navigate=useNavigate()
   const submitfn = (e) => {
     e.preventDefault();
 
@@ -38,6 +51,23 @@ function ArtistForgetPassword() {
     errors.password = formValidation("Password", artistfp.password)
 
     setErrors(errors)
+    if (!errors.email && !errors.password) {
+      axiosInstance.post(`forgotPwdArtist`,artistfp)
+      .then((res)=>{
+        console.log(res);
+        if(res.data.status==200){
+          toast.success("Password Updated Succesfully")
+          navigate("/artist_login")
+        }
+        else {
+          toast.error(res.data.msg)
+        }
+      })
+      .catch((err)=>{
+        console.log(err);
+      })
+    }
+  
 
   }
 
@@ -86,7 +116,7 @@ function ArtistForgetPassword() {
                       <button type='submit'>Change</button>
                     </div>
                     <div className="col-12 mt-2 user_log_forgot_pass FPp">
-                      <p>Don't have an account? Register</p>
+                    <Link to="/artist_register" style={{textDecoration:"none"}}><p>Don't have an account? Register</p></Link>  
                     </div>
                   </form>
                 </div>

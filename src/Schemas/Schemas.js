@@ -18,3 +18,18 @@ export const userRegSchema  = yup.object().shape({
         district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
         image: yup.object().required("Required"),     
 })
+
+
+export const ArtistRegistration  = yup.object().shape({
+        firstname: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+        lastname:yup.string().min(1,"Enter minimum 1 characters").required("Required"),
+        email:yup.string().email("Please enter a valid email").required("Required"),
+        password:  yup.string().min(5).max(16).matches(passwordRule, "1 uppercase, 1 number, 1 symbol").required("Required"),
+        dob: yup.date().required("Required"),
+        housename: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+        city: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+        pincode:  yup.number().min(100000,pincodeErrorMessage).max(999999,"Pincode must be a 6 digit number").required("Required"),
+        contact:  yup.number().min(1000000000,"Contact must be a 10 digit number").max(9999999999,"Contact must be a 10 digit number").required("Required"),
+        district: yup.string().min(2,"Enter minimum 2 characters").required("Required"),
+        image: yup.object().required("Required"),     
+})
