@@ -1,25 +1,25 @@
 import React from 'react'
-import ArtistSidebar from '../../ArtistSidebar'
+import AdminSidebar from '../AdminSidebar';
 import Table from "react-bootstrap/Table";
-import "./ArtistOrders.css";
 import { Icon } from "@iconify/react";
+import "./AdminViewUser.css"
+import { Link } from 'react-router-dom';
 
-function ArtistOrdrers() {
+
+function AdminViewUsers() {
   return (
     <>
-    
-    <div className='artistorders'>
-      <div className="row">
+    <div className='AdminViewUsers'>
+    <div className="row">
         <div className="col-2">
-        <ArtistSidebar/>
+        <AdminSidebar/>i
         </div>
+        <div class='col-10 Admin-userslist' >
 
-        <div class='col-10 orders' >
+        <div className='Routes-table'>
+
+<h1>User</h1>
         
-
-        <div className='orders-table'>
-        <h1 className="mt-5 ms-3  ">Orders</h1>
-
         <Table
                 striped
                 bordered
@@ -29,12 +29,14 @@ function ArtistOrdrers() {
               >
                 <thead style={{ height: "50px" }}>
                   <tr>
-                    <th>No</th>
-                    <th>Work</th>
-                    <th>User</th>
-                    <th>Price</th>
+                    <th>SL</th>
+                    <th>Order</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th>Status</th>
                     <th>Delivery</th>
+                    <th>View More</th>
+                   
                     
                     
                   </tr>
@@ -44,10 +46,12 @@ function ArtistOrdrers() {
                       <tr >
                         <td>1</td>
                         <td>Work name</td>
-                        <td>Lumiere</td>
-                        <td>250</td>
-                        <td>Fulfiled</td>
+                        <td>Trivandram</td>
+                        <td>Kollam</td>
+                        <td>Status</td>
                         <td>Dtdc</td>
+                        <td><Link to="/Admin_viewuserindividual">click here for further details...</Link></td>
+                        
                         
                        
                       
@@ -59,21 +63,14 @@ function ArtistOrdrers() {
 
         </div>
 
-   
-        
-             
-           
-        </div>
-       
-              
+     
 
             </div>
-          
-        </div>
-      
-    
+</div>
+    </div>
     </>
+    
   )
 }
 
-export default ArtistOrdrers
+export default AdminViewUsers

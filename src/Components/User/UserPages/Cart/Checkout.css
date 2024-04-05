@@ -1,0 +1,54 @@
+.Checkout{
+padding-top: 1rem;
+padding-bottom: 25rem;
+}
+.Checkout h1{
+    text-align: center;
+}
+.Checkout p{
+    text-align: center;
+}
+.checkoutbtn{
+    display: flex;
+    padding-top: 1.5rem;
+    padding-left: 30.8rem;
+    
+}
+
+.upi-input{
+    padding-left: 30.8rem;
+    padding-top: .5rem;
+}
+
+.upi-input input{
+    height: 2.5rem;
+  width: 43%;
+  outline: none;
+  padding: 0 20px;
+  font-size: 17px;
+  font-weight: 400;
+  color: #333;
+  border: 1.5px solid #c7bebe;
+  border-top-width: 1.9px; 
+  transition: all 0.3s ease
+}
+
+.upibtn button{
+    background-color: #ffff;
+    height: 30px;
+    width: 175px;
+    border: 1px solid #28A6FF;
+    margin-right: 15px;
+    
+}
+
+.codbtn button{
+    background-color: #ffff;
+    height: 30px;
+    width: 175px;
+    border: 1px solid #85E0A3;
+    margin-right: 15px;
+    color: #85E0A3;
+    font-weight: 800;
+    font-size: 15px;
+}

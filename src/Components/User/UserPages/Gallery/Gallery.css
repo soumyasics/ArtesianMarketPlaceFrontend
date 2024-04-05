@@ -91,7 +91,7 @@ font-weight: 600;
 }
 .gallery-artistprofile{
     position: relative;
-    bottom: 20rem;
+    bottom: 18rem;
     left:7.7rem
 }
 
@@ -104,7 +104,7 @@ font-weight: 600;
 
 .gallery-chat-icon{
     position: relative;
-    bottom:23.4rem;
+    bottom:21.3rem;
     left:9.1rem;
 }
 
@@ -159,4 +159,8 @@ font-weight: 600;
     width: 45px;
     color: #2196F3;
    
+}
+
+.gallery-products{
+    padding-bottom: 5.8rem;
 }

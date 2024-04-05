@@ -1,0 +1,35 @@
+
+.OrderConfirm{
+    padding-top: 5rem;
+    padding-bottom: 8rem;
+}
+.OrderConfirm h1{
+    font-size: 25px;
+    text-align: center;
+    padding-bottom: 2rem;
+}
+.OrderConfirm h3{
+    font-size: 15px;
+    color: #106EB1;
+    padding-left: 26.5rem;
+    padding-bottom: .5rem;
+}
+
+.OrderConfirm p{
+    margin-bottom: -3px;
+    font-size: 15px;
+    color: #106EB1;
+    padding-left: 26.5rem;
+}
+
+.orderconfirmbtn{
+    padding-top: 3rem;
+    padding-left: 26.7rem;
+}
+.orderconfirmbtn button{
+    background-color: #ffff;
+    height: 35px;
+    width: 120px;
+    border: 1px solid #28A6FF;
+    margin-right: 15px;
+}

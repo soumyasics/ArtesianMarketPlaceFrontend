@@ -1,25 +1,23 @@
 import React from 'react'
-import ArtistSidebar from '../../ArtistSidebar'
+import "./DeliveryRoutes.css"
+import DeliveryAgentSidebar from '../../DeliveryAgentSidebar'
 import Table from "react-bootstrap/Table";
-import "./ArtistOrders.css";
 import { Icon } from "@iconify/react";
 
-function ArtistOrdrers() {
+function DeliveryRoutes() {
   return (
-    <>
-    
-    <div className='artistorders'>
-      <div className="row">
+   <>
+    <div className='DeliveryRoutes'>
+    <div className="row">
         <div className="col-2">
-        <ArtistSidebar/>
+        <DeliveryAgentSidebar/>
         </div>
+        <div class='col-10 routes' >
 
-        <div class='col-10 orders' >
+<div className='Routes-table'>
+
+<h1>Routes</h1>
         
-
-        <div className='orders-table'>
-        <h1 className="mt-5 ms-3  ">Orders</h1>
-
         <Table
                 striped
                 bordered
@@ -29,12 +27,13 @@ function ArtistOrdrers() {
               >
                 <thead style={{ height: "50px" }}>
                   <tr>
-                    <th>No</th>
-                    <th>Work</th>
-                    <th>User</th>
-                    <th>Price</th>
+                    <th>SL</th>
+                    <th>Order</th>
+                    <th>From</th>
+                    <th>To</th>
                     <th>Status</th>
                     <th>Delivery</th>
+                   
                     
                     
                   </tr>
@@ -44,10 +43,16 @@ function ArtistOrdrers() {
                       <tr >
                         <td>1</td>
                         <td>Work name</td>
-                        <td>Lumiere</td>
-                        <td>250</td>
-                        <td>Fulfiled</td>
+                        <td>Trivandram</td>
+                        <td>Kollam</td>
+                        <td id="routes-accept">Status
+                        <select >
+                        <option id='status-icon'>Status</option>
+                        <option id="status" value='Accepted'> Accepted </option>
+                      </select>
+                        </td>
                         <td>Dtdc</td>
+                        
                         
                        
                       
@@ -59,21 +64,13 @@ function ArtistOrdrers() {
 
         </div>
 
-   
-        
-             
-           
-        </div>
-       
-              
-
-            </div>
-          
-        </div>
-      
     
-    </>
+
+        </div>
+        </div>
+    </div>
+   </>
   )
 }
 
-export default ArtistOrdrers
+export default DeliveryRoutes

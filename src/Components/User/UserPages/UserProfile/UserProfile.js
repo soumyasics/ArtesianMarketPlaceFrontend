@@ -3,11 +3,13 @@ import "./UserProfile.css"
 import Navbar from '../../../Navbar/Navbar'
 import profileimage from "../../../../Assets/aubrey-graham-photo-u164.jpg"
 import Footer from '../../../Footer/Footer'
+import Usernav from '../../../Navbar/Usernav'
+import NavMain from '../../../Navbar/NavMain'
 
 function UserProfile() {
     return (
         <>
-            <Navbar/>
+            <NavMain/>
             <div className='UserProfile'>
 
                 <section className='Cover-img'>
