@@ -3,11 +3,12 @@ import logo from "../../Assets/logo.svg";
 import axiosInstance from "../../Schemas/BaseUrl";
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
-import { ArtistRegistrationscgema } from "../../Schemas/Schemas";
+import { deliveryagentschema } from "../../Schemas/Schemas";
 import { toast } from "react-toastify";
 
 
-function ArtistRegistration() {
+
+function DeliveryAgentRegister() {
   const navigate = useNavigate();
 
 
@@ -29,7 +30,7 @@ function ArtistRegistration() {
       return;
     }
 
-    axiosInstance.post(`/registerArtist`, values, {
+    axiosInstance.post(`/registerdelivery`, values, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
@@ -38,9 +39,9 @@ function ArtistRegistration() {
         console.log(res);
         if (res.data.status === 200) {
           toast.success("Registration Successful");
-          localStorage.setItem("userid",res.data.data._id)
-          console.log(res.data.data._id);
-          navigate("/artist_login")
+          // localStorage.setItem("userid",res.data.data._id)
+          // console.log(res.data.data._id);
+          // navigate("/artist_login")
         } else {
           toast.warn("This user has already been registered");
         }
@@ -71,34 +72,27 @@ function ArtistRegistration() {
       lastname: "",
       email: "",
       password: "",
-      dob: "",
+      age: "",
       housename: "",
       city: "",
       pincode: "",
       contact: "",
       district: "",
+      aadhar:"",
       image: null,
     },
-    validationSchema: ArtistRegistrationscgema,
+    validationSchema: deliveryagentschema,
     onSubmit:onSubmit
   });
 console.log(values);
   const handleImageChange = (event) => {
     setFieldValue("image", event.currentTarget.files[0]);
   };
-  const today = new Date();
-  today.setHours(0, 0, 0, 0); // Set hours, minutes, seconds, and milliseconds to 0
+  
 
-  // Get tomorrow's date
-  const tomorrow = new Date(today);
-  tomorrow.setDate(tomorrow.getDate() + 1);
-
-  // Format today's and tomorrow's dates to YYYY-MM-DD
-  const todayFormatted = today.toISOString().split('T')[0];
-  const tomorrowFormatted = tomorrow.toISOString().split('T')[0];
-    return (
+  return (
     <div>
-    <div className="user_reg">
+        <div className="user_reg">
       <div className="row user_reg_box">
         <div className="col-lg-6 col-md-6 col-sm-6 user_reg_box1">
           <div className="user_reg_box1_logo">
@@ -111,8 +105,8 @@ console.log(values);
         </div>
         <div className="col-lg-6 col-md-6 col-sm-6 user_reg_box2 m-0 p-0">
           <div className="user_reg_box_white">
-            <p className="user_reg_title">Sign Up as Artist</p>
-            <form onSubmit={(e)=>{handleSubmit(e)}} >
+            <p className="user_reg_title">Sign Up as Delivery Agent</p>
+            <form onSubmit={(e)=>{handleSubmit(e)}}>
               <div className="row">
                 <div className="col-12 mt-2">
                   <input
@@ -125,10 +119,9 @@ console.log(values);
                     onBlur={handleBlur}
                     required
                   />
-                                     {errors.firstname && touched.firstname && (
-                      <p className="error">{errors.firstname}</p>
-                    )}
-
+                 
+                 {errors.firstname && touched.firstname && (
+                      <p className="error">{errors.firstname}</p>)}
                 </div>
                 <div className="col-12 mt-2">
                   <input
@@ -141,10 +134,10 @@ console.log(values);
                     onBlur={handleBlur}
                     required
                   />
-                                     {errors.lastname && touched.lastname && (
+                                                    {errors.lastname && touched.lastname && (
                       <p className="error">{errors.lastname}</p>
                     )}
-
+  
                 </div>
                 <div className="col-12 mt-2">
                   <input
@@ -154,62 +147,46 @@ console.log(values);
                     name="email"
                     value={values.email}
                     onChange={handleChange}
-                    onBlur={handleBlur}          
+                    onBlur={handleBlur}                          
                     required
                   />
-                     {errors.email && touched.email && (
+                        {errors.email && touched.email && (
                       <p className="error">{errors.email}</p>
                     )}
-                
+              
                 </div>
-                <div className="col-5 mt-2">Date of Birth</div>
-                <div className="col-7 mt-2">
-                  <input
-                    type="date"
-                    className="form-control user_inp rounded-0"
-                    placeholder=""
-                    name="dob"
-                    value={values.dob}
-                    onChange={handleChange}
-                    max={tomorrowFormatted} // Set maximum date to tomorrow
-                    onBlur={handleBlur}                 
-                    required
-                  />
-                      {errors.dob && touched.dob && (
-                      <p className="error">{errors.dob}</p>
-                    )}
-                
-                </div>
-                <div className="col-12 mt-2">
-                  <input
-                    type="number"
-                    className="form-control user_inp rounded-0"
-                    placeholder="Contact"
-                    name="contact"
-                    value={values.contact}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    required
-                  />
-                                      {errors.contact && touched.contact && (
-                      <p className="error">{errors.contact}</p>
-                    )}
-
-                </div>
+                {/* <div className="col-5 mt-2">Date of Birth</div> */}
                 <div className="col-12 mt-2">
                   <input
                     type="text"
                     className="form-control user_inp rounded-0"
-                    placeholder="Housename"
+                    placeholder="House name"
                     name="housename"
                     value={values.housename}
                     onChange={handleChange}
                     onBlur={handleBlur}
-
                     required
                   />
-                                     {errors.housename && touched.housename && (
+                                      {errors.housename && touched.housename && (
                       <p className="error">{errors.housename}</p>
+                    )}
+                 
+                </div>
+                <div className="col-6 mt-2">
+                  <input
+                    type="text"
+                    className="form-control user_inp rounded-0"
+                    placeholder="City"
+                    value={values.city}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+
+                 name="city"
+                   
+                    required
+                  />
+                                                       {errors.city && touched.city && (
+                      <p className="error">{errors.city}</p>
                     )}
 
                 </div>
@@ -220,58 +197,109 @@ console.log(values);
                     placeholder="Pincode"
                     name="pincode"
                     value={values.pincode}
-                      onBlur={handleBlur}
-                      onChange={handleChange}
+                    onBlur={handleBlur}
+                    onChange={handleChange}
+
                     required
                   />
-                                     {errors.pincode && touched.pincode && (
+                                               {errors.pincode && touched.pincode && (
                       <p className="error">{errors.pincode}</p>
                     )}
-
+        
                 </div>
                 <div className="col-6 mt-2">
-                  <input
-                    type="text"
-                    className="form-control user_inp rounded-0"
-                    placeholder="City"
-                    name="city"
-                    value={values.city}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-
-                    required
-                  />
-                                     {errors.city && touched.city && (
-                      <p className="error">{errors.city}</p>
-                    )}
-
-                </div>
-                <div className="col-12 mt-2">
                   <input
                     type="text"
                     className="form-control user_inp rounded-0"
                     placeholder="District"
                     name="district"
                     value={values.district}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+     
                     required
                   />
-                                     {errors.district && touched.district && (
+                                                 {errors.district && touched.district && (
                       <p className="error">{errors.district}</p>
+                    )}
+      
+                </div>
+                <div className="col-6 mt-2">
+                  <input
+                    type="number"
+                    className="form-control user_inp rounded-0"
+                    placeholder="Age"
+                    name="age"
+                    value={values.age}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+            
+                    required
+                  />
+                                                      {errors.age && touched.age && (
+                      <p className="error">{errors.age}</p>
+                    )}
+ 
+                </div> <div className="col-12 mt-2">
+                  <input
+                    type="number"
+                    className="form-control user_inp rounded-0"
+                    placeholder="Aadhar"
+                    name="aadhar"
+                    value={values.aadhar}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+
+                    required
+                  />
+                                                       {errors.aadhar && touched.aadhar && (
+                      <p className="error">{errors.aadhar}</p>
                     )}
 
                 </div>
-               
+
                 <div className="col-12 mt-2">
+                  <input
+                    type="number"
+                    className="form-control user_inp rounded-0"
+                    placeholder="Contact"
+                    name="contact"
+                    value={values.contact}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+         
+                    required
+                  />
+                                                  {errors.contact && touched.contact && (
+                      <p className="error">{errors.contact}</p>
+                    )}
+      
+                </div>
+                {/* <div className="col-12 mt-2">
+                  <input
+                    type="text"
+                    className="form-control user_inp rounded-0"
+                    placeholder="Address"
+                    name="address"
+                   
+                    required
+                  />
+                 
+                </div> */}
+                {/* <div className="col-4 mt-2">
+                  UploadLicence 
+                </div> */}
+                <div className="col-12 mt-2">
+                <label for="fileInput">Upload Licence</label>
                   <input
                     type="file"
                     className="form-control user_inp rounded-0"
                     placeholder=""
                     name="image"
+                    id="fileInput"
+                    required
                     onChange={handleImageChange}
                     onBlur={handleBlur}
-                    required
                   />
                 </div>
                 <div className="col-12 mt-2">
@@ -283,12 +311,13 @@ console.log(values);
                     value={values.password}
                     onChange={handleChange}
                     onBlur={handleBlur}
+             
                     required
                   />
-                             {errors.password && touched.password && (
+                                    {errors.password && touched.password && (
                       <p className="error">{errors.password}</p>
                     )}
-         
+           
                 </div>
                 <div className="col-12 mt-2 user_reg_btn mt-4">
                   <button type="submit">Register</button>
@@ -298,13 +327,13 @@ console.log(values);
           </div>
 
           <div className="user_reg_link">
-          <Link to="/artist_login" style={{textDecoration:"none"}}><p>Have an account Login</p></Link>  
+          <Link to="/delivery_agent_login" style={{textDecoration:"none"}}><p>Have an account Login</p></Link>  
           </div>
         </div>
       </div>
     </div>
-  </div>
+    </div>
   )
 }
 
-export default ArtistRegistration
+export default DeliveryAgentRegister

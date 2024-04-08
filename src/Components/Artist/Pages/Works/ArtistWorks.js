@@ -1,25 +1,44 @@
 import React from 'react'
+import "./ArtistWorks.css"
 import ArtistSidebar from '../../ArtistSidebar'
 import Table from "react-bootstrap/Table";
-import "./ArtistOrders.css";
 import { Icon } from "@iconify/react";
-
-function ArtistOrdrers() {
+function ArtistWorks() {
   return (
+
     <>
-    
-    <div className='artistorders'>
-      <div className="row">
-        <div className="col-2">
-        <ArtistSidebar/>
-        </div>
+      <div className='ArtistWorks'>
 
-        <div class='col-10 orders' >
+        <div className='row'>
+
+          <div className="col-2">
+            <ArtistSidebar />
+          </div>
+
+          <div class='col-10 works' >
+<div className='works-form'>
+  
+<h1>Works</h1>
+
+  <div className='works-input'>
+    <input type='text' placeholder='Art Name'/>
+  </div>
+  <div className='works-input'>
+    <input type='text' placeholder='Price'/>
+  </div>
+  <div className='works-files'>
+    <input type='file'/>
+  </div>
+  <div className='works-btn'>
+    <button>ADD</button>
+  </div>
+</div>
+
+<div className='works-list'>
+<h1>WORKS LIST</h1>
+
+<div className='works-table'>
         
-
-        <div className='orders-table'>
-        <h1 className="mt-5 ms-3  ">Orders</h1>
-
         <Table
                 striped
                 bordered
@@ -29,12 +48,12 @@ function ArtistOrdrers() {
               >
                 <thead style={{ height: "50px" }}>
                   <tr>
-                    <th>No</th>
+                    <th>SL</th>
                     <th>Work</th>
-                    <th>User</th>
                     <th>Price</th>
-                    <th>Status</th>
-                    <th>Delivery</th>
+                    <th>Likes</th>
+                    <th>Sales count</th>
+                   
                     
                     
                   </tr>
@@ -44,10 +63,10 @@ function ArtistOrdrers() {
                       <tr >
                         <td>1</td>
                         <td>Work name</td>
-                        <td>Lumiere</td>
                         <td>250</td>
-                        <td>Fulfiled</td>
-                        <td>Dtdc</td>
+                        <td>250</td>
+                        <td>200</td>
+                        
                         
                        
                       
@@ -59,21 +78,19 @@ function ArtistOrdrers() {
 
         </div>
 
-   
-        
-             
-           
-        </div>
-       
-              
-
-            </div>
-          
-        </div>
-      
     
+
+</div>
+
+
+
+          </div>
+        </div>
+      </div>
     </>
+
+
   )
 }
 
-export default ArtistOrdrers
+export default ArtistWorks

@@ -1,0 +1,29 @@
+.routes{
+    background-image: url("../../../../Assets/Admin\ bg.png");
+    padding: 0 5rem;
+    height: 800px;
+    
+}
+.Routes-table h1{
+    padding-top: 3rem;
+}
+.Routes-table {
+    padding-bottom: 3rem;
+   
+}
+
+.Routes-table a{
+    
+    text-decoration: none;
+   
+}
+#routes-accept{
+    width: 200px;
+}
+
+#routes-accept select{
+border: none;
+margin-left: 1.7rem;
+background-color: #f2f2f2;
+font-weight: 600;
+}

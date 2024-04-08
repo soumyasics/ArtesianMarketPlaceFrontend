@@ -1,13 +1,12 @@
-import React from 'react';
-import './ArtistSidebar.css';
+import React from 'react'
 import { Link } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 
-function ArtistSidebar() {
+function DeliveryAgentSidebar() {
   return (
     <div>
-      <div id="wrapper">
+        <div id="wrapper">
         <div id="sidebar-wrapper">
           <div className='sidebar-logo'>
             <Icon icon="dashicons:art" className="sidebar-logo-icon" />
@@ -17,22 +16,20 @@ function ArtistSidebar() {
 
           <ul className="sidebar-nav" id="menu">
             <li className="active">
-              <Link to="/artist_orders">Orders</Link>
+              <Link to="/delivery_agent_routes">Routes</Link>
             </li>
             <li>
-              <Link to="/artist_works">Works</Link>
+              <Link to="/delivery_agent_jobs">Jobs</Link>
             </li>
             <li>
-              <Link to="/artist_profile">Profile</Link>
+              <Link to="/delivery_agent_profile">Profile</Link>
             </li>
-            <li>
-              <Link to="/artist_chat">Chat</Link>
-            </li>
+
           </ul>
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default ArtistSidebar;
+export default DeliveryAgentSidebar

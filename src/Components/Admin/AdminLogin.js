@@ -1,8 +1,39 @@
-import React from 'react'
+import React, { useState } from 'react'
 import logo from "../../Assets/logo.svg"
 import "./AdminLogin.css"
+import {toast}from "react-toastify"
 
 function AdminLogin() {
+
+  const[data,setData]=useState({
+    username:"",
+    password:""
+  })
+
+  let username="admin"
+  let password="admin123"
+const changefn=((a)=>{
+  setData({
+    ...data,[a.target.name]:a.target.value
+  })
+})
+
+const submitfn=((a)=>{
+  a.preventDefault()
+  if(username==data.username){
+    if(password==data.password){
+      toast.success("Login Successfully")
+    }
+    else{
+      toast.error("Password Error")
+    }
+  }
+  else{
+    toast.error("Username Error")
+  }
+})
+
+
   return (
     <div className="user_reg">
         <div className="row user_reg_box">
@@ -22,15 +53,16 @@ function AdminLogin() {
                 <p className="user_reg_title">Admin Login</p>
                 <div className="row">
 
-                  <form >
+                  <form onSubmit={submitfn} >
 
                     <div className="col-12 mt-2">
                       <input
-                        type="email"
+                        type="text"
                         className="form-control user_inp rounded-0 login_icon_input"
-                        placeholder='email'
-                        name='email'
-                        
+                        placeholder='username'
+                        name='username'
+                        value={data.username}
+                        onChange={changefn}
 
 
                       />
@@ -42,7 +74,8 @@ function AdminLogin() {
                         className="form-control user_inp rounded-0 password_icon_input"
                         placeholder="Password"
                         name='password'
-                        
+                        value={data.password}
+                        onChange={changefn}
                       />
                       {/* {errors.password && <div className='text-danger'> {errors.password} </div>} */}
                     </div>

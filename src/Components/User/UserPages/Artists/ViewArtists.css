@@ -1,0 +1,53 @@
+.ViewArtists{
+    padding: 0 16.2rem;
+    padding-top: 3rem;
+    padding-bottom: 1rem;
+}
+
+.ViewArtists h1{
+    text-align: center;
+    padding-bottom: .5rem;
+}
+
+.ViewArtists p{
+    text-align: center;
+    padding-bottom: 3rem;
+    color: #073D64;
+}
+
+.viewartists-list{
+    display: flex;
+    padding-bottom: 2rem;
+   
+
+}
+
+.viewartists-listimg{
+    padding-bottom: 2.5rem;
+}
+
+.viewartists-listimg a{
+    text-decoration: none;
+    color: black;
+}
+
+.viewartists-listimg img{
+    height:100px;
+    width:100px;
+    border-radius: 50%;
+   
+}
+
+.viewartists-image{
+    height:100px;
+    width:100px;
+    margin: auto;
+
+}
+
+.viewartists-listimg h1{
+    padding-top: 10px;
+  text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+}

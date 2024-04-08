@@ -11,8 +11,8 @@ function UserRegistration() {
   const navigate = useNavigate();
 
 
-  const onSubmit = () => {
-
+  const onSubmit = (e) => {
+    // e.preventDefault()
     const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
     if (values.contact.toString().length !== 10) {
@@ -28,8 +28,12 @@ function UserRegistration() {
       toast.warning("Password must meet the specified criteria");
       return;
     }
-
-    axiosInstance.post(`/registerUser`, values)
+    
+    axiosInstance.post(`/registerUser`, values, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
@@ -73,7 +77,7 @@ function UserRegistration() {
       pincode: "",
       contact: "",
       district: "",
-      image: null,
+      image: "",
     },
     validationSchema: userRegSchema,
     onSubmit:onSubmit
