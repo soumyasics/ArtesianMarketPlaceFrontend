@@ -2,7 +2,7 @@ import React from "react";
 import "./UserRegistration.css";
 import logo from "../../Assets/logo.svg";
 import axiosInstance from "../../Schemas/BaseUrl";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userRegSchema } from "../../Schemas/Schemas";
 import { toast } from "react-toastify";
@@ -11,18 +11,16 @@ function UserRegistration() {
   const navigate = useNavigate();
 
 
-  
-
-  const onSubmit = () => {
-
+  const onSubmit = (e) => {
+    // e.preventDefault()
     const passwordRule = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,16}$/;
 
     if (values.contact.toString().length !== 10) {
-      alert("Contact number must be a 10-digit number");
+      toast.warning("Contact number must be a 10-digit number");
       return;
     }
     if (values.pincode.toString().length !== 6) {
-      alert("Pincode must be a 6-digit number");
+      toast.warning("Pincode must be a 6-digit number");
       return;
     }
 
@@ -30,19 +28,26 @@ function UserRegistration() {
       toast.warning("Password must meet the specified criteria");
       return;
     }
-
-    axiosInstance.post(`/registerUser`, values)
+    
+    axiosInstance.post(`/registerUser`, values, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    })
       .then((res) => {
         console.log(res);
         if (res.data.status === 200) {
-          alert("Registration Successful");
+          toast.success("Registration Successful");
+          localStorage.setItem("userid",res.data.data._id)
+          console.log(res.data.data._id);
+          navigate("/user_login")
         } else {
-          alert("something went wrong");
+          toast.warn("This user has already been registered");
         }
       })
       .catch((err) => {
         console.log(err);
-        alert("something went wrong");
+        toast.error("something went wrong");
       });
   };
 
@@ -72,12 +77,12 @@ function UserRegistration() {
       pincode: "",
       contact: "",
       district: "",
-      image: null,
+      image: "",
     },
     validationSchema: userRegSchema,
     onSubmit:onSubmit
   });
-
+console.log(values);
   const handleImageChange = (event) => {
     setFieldValue("image", event.currentTarget.files[0]);
   };
@@ -273,7 +278,7 @@ function UserRegistration() {
             </div>
 
             <div className="user_reg_link">
-              <p>Have an account Login</p>
+             <Link to="/user_login"  style={{textDecoration:"none"}}> <p>Have an account Login</p></Link>
             </div>
           </div>
         </div>

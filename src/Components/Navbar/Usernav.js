@@ -1,13 +1,36 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Navbar.css"
 import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Home Logo.png"
 import Profileimg from "../../Assets/aubrey-graham-photo-u164.jpg"
+import axiosInstance from '../../Schemas/BaseUrl'
 
 
 
 function Usernav() {
+  const url = "http://localhost:4004";
+
     const navigate = useNavigate()
+    const userid=localStorage.getItem("userid")
+    console.log(userid);
+
+    const[data,setData]=useState({})
+
+    useEffect(()=>{
+      axiosInstance.post(`viewUserById/${userid}`)
+      .then((res)=>{
+          console.log(res);
+          setData(res.data.data)
+      })
+      .catch((err)=>{
+          console.log(err);
+      })
+  },[])
+
+console.log(`${url}/${data.image?.filename}`);
+
+
+
   return (
 <nav id='common-home-navbar' class="navbar bg-body-tertiary">
   <div class="container-fluid">
@@ -30,7 +53,7 @@ function Usernav() {
 
  <div id="nav-profileimg" class="dropdown ">
  
- <img src={Profileimg}  className="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"/>
+ <img src={`${url}/${data.image?.filename}`}  className="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"/>
  
  <ul class="dropdown-menu dropdownbackg">
    <li><Link to="/user_profile" class="dropdown-item ">Profile</Link></li>

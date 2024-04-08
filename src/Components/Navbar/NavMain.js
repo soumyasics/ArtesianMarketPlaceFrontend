@@ -4,12 +4,12 @@ import Navbar from './Navbar'
 
 
 
-function NavMain() {
+function NavMain({url}) {
     const[status,setStatus]=useState(true)
 
     if (status==true){
         return(
-            <Usernav/>
+            <Usernav url={url}/>
 
         )
     }
