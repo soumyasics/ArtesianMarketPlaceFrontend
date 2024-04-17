@@ -41,20 +41,25 @@ function ArtistChat() {
 </div>
 
 <div className='row' id='artistchattingsection'>
-<div className='col-6 artistchatting-usersection'>
+<div className='col-6 artistchatting-usersection artist-msgtym'>
 <div className='artist-usermessage'>
 <h1>hello Luminere</h1>
+<p>12:30</p>
+</div>
 </div>
 
 
-</div>
-<div className='col-6 artistchatting-artistsection' >
+<div className='col-6 artistchatting-artistsection user-msgtym' >
 <div className='artistmessage'>
-<h1>hidsjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjmsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</h1>
+<h1>hello</h1>
+<p>12:35</p>
 </div>
+
 
 </div>   
 </div>  
+
+
 
 </div>
 

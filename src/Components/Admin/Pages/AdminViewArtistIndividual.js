@@ -1,6 +1,7 @@
 import React from 'react'
 import profileimage from "../../../Assets/aubrey-graham-photo-u164.jpg"
 import AdminSidebar from '../AdminSidebar'
+import "./AdminViewArtistIndividual.css"
 function AdminViewArtistIndividual() {
   return (
     <div>
@@ -59,6 +60,10 @@ function AdminViewArtistIndividual() {
 
 
 
+</div>
+
+<div className='adminremovebtn '>
+   <button>Remove Account</button>
 </div>
 
 </div>

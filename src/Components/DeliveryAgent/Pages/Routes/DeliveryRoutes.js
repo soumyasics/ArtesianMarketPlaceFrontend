@@ -16,7 +16,7 @@ function DeliveryRoutes() {
 
 <div className='Routes-table'>
 
-<h1>Routes</h1>
+<h1>Order Requests</h1>
         
         <Table
                 striped

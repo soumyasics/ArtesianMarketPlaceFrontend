@@ -43,7 +43,7 @@ function About() {
                     <p>Artist Empowerment: We provide the tools, resources, and support to help artists navigate their creative journey and thrive. Seamless Navigation: We prioritize safety and security, making transactions smooth and worry-free, from purchase to doorstep delivery. Global Connection: We bridge continents and cultures, fostering a community of art enthusiasts united by their passion for creativity..</p>
                 </div>
 
-                <section id="featured-artist">
+                {/* <section id="featured-artist">
 
                     <h1>Featured Artist</h1>
                     <h2>We provide the tools and support to help your artistic compass guide you.</h2>
@@ -77,7 +77,7 @@ function About() {
                     </div>
 
 
-                </section>
+                </section> */}
 
             </div>
             <Footer />

@@ -41,6 +41,9 @@ import DeliveryAgent_Profile from "./Components/DeliveryAgent/Pages/Profile/Deli
 import AdminViewDeliveryAgentIndividual from "./Components/Admin/Pages/AdminViewDeliveryAgentIndividual";
 import UserOrders from "./Components/User/UserPages/Orders/UserOrders";
 import IndividualArtistWorks from "./Components/User/UserPages/Artists/IndividualArtistWorks";
+import ArtistChatmain from "./Components/Artist/Pages/Chat/ArtistChatmain";
+import ViewSingleWork from "./Components/User/UserPages/Artists/ViewSingleWork";
+import UserChat from "./Components/User/UserPages/Chat/UserChat";
 
 
 const url = "http://localhost:4004";
@@ -50,6 +53,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
+          
           {/* Admin */}
 
           <Route path="admin_login" element={<AdminLogin />} />

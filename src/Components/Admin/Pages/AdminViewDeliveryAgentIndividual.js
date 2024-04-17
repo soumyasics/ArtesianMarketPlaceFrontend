@@ -1,6 +1,7 @@
 import React from 'react';
 import AdminSidebar from '../AdminSidebar';
 import profileimage from "../../../Assets/aubrey-graham-photo-u164.jpg";
+import "./AdminViewDeliveryAgentIndividual.css"
 function AdminViewDeliveryAgentIndividual() {
   return (
     <div>
@@ -51,6 +52,10 @@ function AdminViewDeliveryAgentIndividual() {
    <div className='col-12'>
    <div className='artistprofileinput2 '><p>Address : Kottil veedu kavanadu kollam </p></div>
    </div>
+</div>
+
+<div className='adminremoveagentbtn '>
+   <button>Remove Account</button>
 </div>
 
 

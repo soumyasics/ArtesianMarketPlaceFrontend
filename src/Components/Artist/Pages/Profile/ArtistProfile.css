@@ -1,6 +1,6 @@
 .artistProfile{
     background-image: url("../../../../Assets/Admin\ bg.png");
-    height : 1000px;
+    min-height : 800px;
     padding: 0 3rem;
     
 }
@@ -10,6 +10,7 @@
 
 .artistProfilepage{
     padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 /* .Cover-img h1{
@@ -63,7 +64,7 @@ color: #fff;
 
 .artistprofile-details{
     padding-top: 40px;
-height: 400px;
+/* height: 400px; */
 width: 70%;
 margin:auto
 
