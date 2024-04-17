@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axiosInstance from '../../Schemas/BaseUrl'
+import { toast } from "react-toastify";
+
 
 function DeliveryAgent() {
   const [delivery, setDelivery] = useState({
@@ -41,12 +44,29 @@ function DeliveryAgent() {
     e.preventDefault();
 
     let errors = {}
+    let formIsValid = true;
 
     errors.email = formValidation("Email", delivery.email);
     errors.password = formValidation("Password", delivery.password)
 
     setErrors(errors)
 
+    if (formIsValid) {
+      console.log("data", delivery);
+    }
+    axiosInstance.post(`logindelivery`,delivery)
+    .then((res)=>{
+      console.log(res);
+      if(res.data.status==200){
+        toast.success("Login Succesfully")
+      }
+      else if(res.data.status==500){
+        toast.error(res.data.msg)
+      }
+    })
+    .catch((err)=>{
+      toast.error("User Not Found")
+    })
 
   }
 
@@ -86,13 +106,13 @@ function DeliveryAgent() {
               {errors.password && <div className='text-danger'> {errors.password} </div>}
             </div>
             <div className="col-12 mt-2 user_log_forgot_pass">
-            <p><Link to="/delivery_agent_forgetpassword">Forgot Password</Link></p>
+            <Link to="/delivery_agent_forgetpassword" style={{textDecoration:"none"}}> <p>Forgot Password</p></Link> 
             </div>
             <div className="col-12 mt-2 user_reg_btn">
               <button type='submit'>Register</button>
             </div>
             <div className="col-12 mt-2 user_log_forgot_pass">
-            <p><Link to="/delivery_agent_register">Don't have an account? Register</Link></p>
+            <Link to="/delivery_agent_register" style={{textDecoration:"none"}}><p>Don't have an account? Register</p></Link>  
             </div>
 
           </form>

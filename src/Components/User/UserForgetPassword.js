@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../User/UserLogin.css";
 import logo from "../../Assets/logo.svg";
 import "../User/UserFP.css"
+import axiosInstance from "../../Schemas/BaseUrl";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 
@@ -38,6 +40,9 @@ function UserForgetPassword() {
     if (!value.trim()) {
       return `${fieldName} is required`;
     }
+    if (fieldName === "Password" && value.length < 8) {
+      return "Password must be at least 8 characters long";
+    }
     return '';
   }
 
@@ -50,7 +55,21 @@ function UserForgetPassword() {
     errors.password = formHandeling("Password", data.password)
 
     setErrors(errors)
-
+    if (!errors.email && !errors.password) {
+    axiosInstance.post(`forgotPwdUser`,data)
+    .then((res)=>{
+      console.log(res);
+      if(res.data.status==200){
+        toast.success("Password Updated Succesfully")
+      }
+      else {
+        toast.error(res.data.msg)
+      }
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
   }
 
   return (
@@ -109,7 +128,7 @@ function UserForgetPassword() {
                       <button type="submit">Change</button>
                     </div>
                     <div className="col-12 mt-2 user_log_forgot_pass FPp">
-                    <p><Link to="/user_register">Don't have an account? Register</Link></p>
+                    <Link to="/user_register"  style={{textDecoration:"none"}}> <p>Don't have an account? Register</p></Link> 
                     </div>
                   </form>
                 </div>
