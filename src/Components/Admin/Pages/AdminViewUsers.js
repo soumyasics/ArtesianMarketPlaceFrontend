@@ -1,75 +1,123 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminSidebar from '../AdminSidebar';
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
 import "./AdminViewUser.css"
 import { Link } from 'react-router-dom';
+import axiosInstance from '../../../Schemas/BaseUrl';
 
 
 function AdminViewUsers() {
+  const [viewuser, setViewuser] = useState([])
+
+ 
+  useEffect(()=>{
+    console.log('hiiii');
+    axiosInstance.post("/viewUsers")
+      .then((res) => {
+        console.log(res, "response");
+        if (res.data.msg=="No Data obtained "){
+          setViewuser([])
+        }
+        else if (res.data.status==200){
+          setViewuser(res.data.data)
+        }
+       
+      })
+      .catch((err) => {
+        console.log(err, "error");
+      })
+  },[])
+
+
+
+  function calculateAge(dob) {
+    const today = new Date();
+    const birthDate = new Date(dob);
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDiff = today.getMonth() - birthDate.getMonth();
+    
+    if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+      age--;
+    }
+    
+    return age;
+  }
+
   return (
     <>
-    <div className='AdminViewUsers'>
-    <div className="row">
-        <div className="col-2">
-        <AdminSidebar/>i
-        </div>
-        <div class='col-10 Admin-userslist' >
+      <div className='AdminViewUsers'>
+        <div className="row">
+          <div className="col-2">
+            <AdminSidebar />
+          </div>
+          <div class='col-10 Admin-userslist' >
 
-        <div className='Routes-table'>
+            {viewuser.length === 0 && (
+              <h1 className="mt-5"> No User Found</h1>
+            )}
+            {viewuser.length > 0 && (
+              <div className='Routes-table'>
 
-<h1>User</h1>
-        
-        <Table
-                striped
-                bordered
-                hover
-                className="mt-5 ms-3"
-                style={{ width: "100%" }}
-              >
-                <thead style={{ height: "50px" }}>
-                  <tr>
-                    <th>SL</th>
-                    <th>Order</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Status</th>
-                    <th>Delivery</th>
-                    <th>View More</th>
+                <h1>User</h1>
+
+                <Table
+                  striped
+                  bordered
+                  hover
+                  className="mt-5 ms-3"
+                  style={{ width: "100%" }}
+                >
+                  <thead style={{ height: "50px" }}>
+                    <tr>
+                      <th>SL</th>
+                      <th>Name</th>
+                      <th>Age</th>
+                      <th>Email</th>
+                      <th>Place</th>
+                      <th>contact</th>
+                      <th>View More</th>
+
+
+
+                    </tr>
+                  </thead>
+                  <tbody >
+
+                    {viewuser.map((user,index)=>{
+
+                      return(
+                        <tr key={index}>
+                      <td>{index+1}</td>
+                      <td>{user.firstname}</td>
+                      <td>{calculateAge(user.dob)}</td>
+                      <td>{user.email}</td>
+                      <td>{user.city},{user.district}</td>
+                      <td>{user.contact}</td>         
+                      <td><Link to="/Admin_viewuserindividual">click here for further details...</Link></td>
+                    </tr> 
+                      )
+
+                    })}
+
                    
-                    
-                    
-                  </tr>
-                </thead>
-                <tbody >
-        
-                      <tr >
-                        <td>1</td>
-                        <td>Work name</td>
-                        <td>Trivandram</td>
-                        <td>Kollam</td>
-                        <td>Status</td>
-                        <td>Dtdc</td>
-                        <td><Link to="/Admin_viewuserindividual">click here for further details...</Link></td>
-                        
-                        
-                       
-                      
-                      </tr>
-                
-                </tbody>
-              </Table>
-              
 
+                  </tbody>
+                </Table>
+
+
+              </div>
+            )}
+
+
+
+
+
+          </div>
         </div>
-
-     
-
-            </div>
-</div>
-    </div>
+      </div>
     </>
-    
+
   )
 }
 
