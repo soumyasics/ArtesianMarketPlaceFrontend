@@ -3,6 +3,8 @@ import "./ArtistWorks.css"
 import ArtistSidebar from '../../ArtistSidebar'
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
+import workimg from "../../../../Assets/Rectangle 12.png"
+
 function ArtistWorks() {
   return (
 
@@ -62,7 +64,11 @@ function ArtistWorks() {
         
                       <tr >
                         <td>1</td>
-                        <td>Work name</td>
+                        <td id='workorders'>
+                         
+                         <img src={workimg}/>
+                         <p>Work Name </p>
+                         </td>
                         <td>250</td>
                         <td>250</td>
                         <td>200</td>

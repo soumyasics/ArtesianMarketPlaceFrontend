@@ -18,7 +18,7 @@ function AdminViewAgents() {
 
         <div className='Routes-table'>
 
-<h1>Artist</h1>
+<h1>Delivery Agent</h1>
         
         <Table
                 striped

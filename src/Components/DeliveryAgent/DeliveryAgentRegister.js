@@ -1,5 +1,6 @@
 import React from 'react'
 import logo from "../../Assets/logo.svg";
+import { Link } from 'react-router-dom';
 
 
 function DeliveryAgentRegister() {
@@ -118,7 +119,7 @@ function DeliveryAgentRegister() {
           </div>
 
           <div className="user_reg_link">
-            <p>Have an account Login</p>
+          <p><Link to="artist_login">Have an account Login</Link></p>
           </div>
         </div>
       </div>

@@ -80,13 +80,13 @@ function ArtistLogin() {
               {errors.password && <div className='text-danger'>{errors.password}</div>}
             </div>
             <div className="col-12 mt-2 user_log_forgot_pass">
-              <p>Forgot Password</p>
+            <p><Link to="/artist_forgetpassword">Forgot Password</Link></p>
             </div>
             <div className="col-12 mt-2 user_reg_btn">
               <button type='submit'>Register</button>
             </div>
             <div className="col-12 mt-2 user_log_forgot_pass">
-              <p>Don't have an account? Register</p>
+            <p><Link to="/artist_register">Don't have an account? Register</Link></p>
             </div>
           </form>
         </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../User/UserLogin.css";
 import logo from "../../Assets/logo.svg";
 import "../User/UserFP.css"
+import { Link } from 'react-router-dom';
 
 function DeliveryAgentForgetPassword() {
   const [deliveryfp, setDeliveryfp] = useState({
@@ -88,7 +89,7 @@ function DeliveryAgentForgetPassword() {
                       <button type='submit'>Change</button>
                     </div>
                     <div className="col-12 mt-2 user_log_forgot_pass FPp">
-                      <p>Don't have an account? Register</p>
+                    <p><Link to="/delivery_agent_register">Don't have an account? Register</Link></p>
                     </div>
                   </form>
                 </div>

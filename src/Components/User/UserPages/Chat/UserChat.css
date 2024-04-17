@@ -1,37 +1,38 @@
-#artistchat-main{
+#userchat-main{
     padding-right: 0;
 }
 
-.ArtistChat{
+
+.userChat{
     
    
-   min-height: 635px;
+   min-height: 650px;
    width: 100%;
     padding: 0;
    
 }
 
-.artistchat-container{
+.userchat-container{
     background-color: #fff;
-    min-height:100px;
+    min-height:114px;
     width: 100%;
     
     
 }
 
-.artistchatdetails{
+.userchatdetails{
 padding-top: 1.4rem;
 }
 
-.artistchat-container h1 {
+.userchat-container h1 {
     font-size: 20px;
     font-weight: 350;
-    padding-left: 19rem;
+    padding-left: 1rem;
     
 }
 
-.artistchat-container2{
-    padding-left: 30rem;
+.userchat-container2{
+    padding-left: 31rem;
     display: flex;
     padding-top: 1rem;
    
@@ -40,15 +41,15 @@ padding-top: 1.4rem;
     
 }
 
-#artistchattingsection{
+#userchattingsection{
    margin: 0;
-    padding-left: 17rem;
+    padding-left: .5rem;
     padding-right: 1.2rem;
     padding-top: 7rem;
    
 }
 
-.artistmessage{
+.usermessage{
     
     border: none;
     border-radius: 50px;
@@ -61,7 +62,7 @@ padding-top: 1.4rem;
    
     
 }
-.artistmessage h1{
+.usermessage h1{
 
     
     padding-top: 10px;
@@ -69,15 +70,15 @@ padding-top: 1.4rem;
     font-size: 20px;
     font-weight: 600;
 }
-.artist-msgtym p{
+.userartist-msgtym p{
     font-size: 13px;
     font-weight: 600;
-    padding-left: 28rem;
+padding-left: 35rem;;
   padding-bottom: 1rem;
 color: #fff;
 }
 
-.artist-usermessage{
+.user-usermessage{
    
     border: none;
     border-radius: 50px;
@@ -88,7 +89,7 @@ color: #fff;
     min-height: 2rem;
     padding-right: 2rem;
 }
-.artist-usermessage h1{
+.user-usermessage h1{
    
     padding-top: 10px;
     padding-left: 2rem;
@@ -97,22 +98,22 @@ color: #fff;
    
 }
 
-.user-msgtym p{
+.useruser-msgtym p{
     font-size: 13px;
     font-weight: 600;
-    padding-left: 28rem;
+    padding-left: 35rem;
   
 color: #1E90FF;
     
 
 }
 
-.artistchatting-artistsection{
+.userchatting-artistsection{
 padding-top: 4.5rem;
 
 }
 
-.artistchat-input input{
+.userchat-input input{
     height: 2.8rem;
     width: 20rem;
     outline: none;
@@ -127,11 +128,11 @@ padding-top: 4.5rem;
     transition: all 0.3s ease
 }
 
-.artistchat-updatebtn{
+.userchat-updatebtn{
     padding-left: .5rem;
 }
 
-.artistchat-updatebtn button{
+.userchat-updatebtn button{
     
     height: 2.8rem;
     width: 7.5rem;
@@ -151,27 +152,27 @@ padding-top: 4.5rem;
     margin-top: .5rem;
 }
 
-.artistchat-container-3{
+.userchat-container-3{
     background-color:#75D7F0;
-    height:94.4px;
+    height:95px;
     width: 100%;
 
 }
 
-.artist-chatinbox{
+.user-chatinbox{
 min-height: 445px;
     background: linear-gradient(to right, #75D7F0, #1E90FF);
 
 }
 
-.chatmessage-input{
-    padding: 0 21.5rem;
+.userchatmessage-input{
+    padding: 0 13.3rem;
     padding-top: 1.6rem;
     
 
 }
 
-.chatmessage-input input{
+.userchatmessage-input input{
     height: 2.8rem;
     width: 58rem;
     outline: none;
@@ -188,12 +189,12 @@ min-height: 445px;
     word-wrap: break-word;
 }
 
-.messagesend{
+.usermessagesend{
     min-height:1.8rem;
     width: 1.8rem;
     position: absolute;
-    top:36.2rem;
-    right: 2.8rem;
+    top:37rem;
+    right: 11rem;
    color: #1E90FF;
     
    

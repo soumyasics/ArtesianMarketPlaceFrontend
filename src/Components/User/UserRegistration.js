@@ -2,7 +2,7 @@ import React from "react";
 import "./UserRegistration.css";
 import logo from "../../Assets/logo.svg";
 import axiosInstance from "../../Schemas/BaseUrl";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import { userRegSchema } from "../../Schemas/Schemas";
 import { toast } from "react-toastify";
@@ -273,7 +273,7 @@ function UserRegistration() {
             </div>
 
             <div className="user_reg_link">
-              <p>Have an account Login</p>
+              <p><Link to="user_login">Have an account Login</Link></p>
             </div>
           </div>
         </div>

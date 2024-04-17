@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "../User/UserLogin.css";
 import logo from "../../Assets/logo.svg";
 import "../User/UserFP.css"
+import { Link } from 'react-router-dom';
 
 function ArtistForgetPassword() {
   const [artistfp, setArtistfp] = useState({
@@ -86,7 +87,7 @@ function ArtistForgetPassword() {
                       <button type='submit'>Change</button>
                     </div>
                     <div className="col-12 mt-2 user_log_forgot_pass FPp">
-                      <p>Don't have an account? Register</p>
+                    <p><Link to="/artist_register">Don't have an account? Register</Link></p>
                     </div>
                   </form>
                 </div>

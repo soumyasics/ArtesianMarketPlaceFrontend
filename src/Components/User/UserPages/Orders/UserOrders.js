@@ -29,20 +29,20 @@ function UserOrders() {
           <table width={"100%"} className='cart-table'>
             <thead >
               <tr >
-                <th width={"75%"}>ITEM</th>
-                <th width={"40%"}>QTY</th>
-                <th width={"40%"}>PRICE</th>
+                <th width={"93%"}>ITEM</th>
+                {/* <th width={"40%"}>QTY</th> */}
+                <th width={"30%"}>PRICE</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td id="cartitemscolb"><img src={itemimg} alt='item-img' /><h3>Lumiere</h3></td>
-                <td id='bold'>2</td>
+                {/* <td id='bold'>2</td> */}
                 <td id='bold'><span>₹</span>100</td>
               </tr>
               <tr>
                 <td id="cartitemscolb"><img src={itemimg} alt='item-img' /><h3>Lumiere</h3></td>
-                <td id='bold'>5</td>
+                {/* <td id='bold'>5</td> */}
                 <td id='bold'><span>₹</span>1000</td>
               </tr>
 
@@ -50,7 +50,7 @@ function UserOrders() {
           </table>
 
           <div className='cart-grandtotal'>
-            <h4><span id="total">GRAND TOTAL</span> &nbsp;<span id='rupees'>₹</span>1100</h4>
+            <h4><span id="total">TOTAL</span> &nbsp;<span id='rupees'>₹</span>1100</h4>
           </div>
 
 

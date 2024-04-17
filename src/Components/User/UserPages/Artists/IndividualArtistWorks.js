@@ -6,11 +6,12 @@ import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg"
 import Usernav from '../../../Navbar/Usernav';
 import "./IndividualArtistWorks.css"
 import NavMain from '../../../Navbar/NavMain';
+import { Link } from 'react-router-dom';
 
 function IndividualArtistWorks() {
     return (
         <>
-            <NavMain/>
+            <NavMain />
 
 
             <section className='Cover-img'>
@@ -21,11 +22,11 @@ function IndividualArtistWorks() {
             <div className='IndividualArtistWorks'>
 
                 <div className='artistworks-profile'>
-                 
-                <div className='artistworks-image'>
-                    <img src={artistimg} alt='artist image' />
-                </div>
-                <h1>Lumiere</h1>
+
+                    <div className='artistworks-image'>
+                        <img src={artistimg} alt='artist image' />
+                    </div>
+                    <h1>Lumiere</h1>
 
                 </div>
 
@@ -34,7 +35,7 @@ function IndividualArtistWorks() {
 
                 <div className='explore-gallery'>
 
-                   
+
 
                     <div className='gallery-products'>
 
@@ -42,13 +43,23 @@ function IndividualArtistWorks() {
                             <div class="row gallery-row">
 
                                 <div class="col-6 gallery-col" >
+
+
                                     <div class="card" style={{ width: "20rem" }}>
-                                        <img src={product} class="card-img-top" alt="..." />
+                                        <Link to="/viewsinglework">
+                                            <img src={product} class="card-img-top" alt="..." />
+                                        </Link>
+
+
 
                                         <div class="artdesc">
                                             <div className='productdet'>
                                                 <h1 class="card-text1">Lumiere</h1>
-                                                <h3 class="card-text2">ADD TO CART</h3>
+                                                <h3 id="card-text2">
+                                                    <button>
+                                                        ADD TO CART
+                                                    </button>
+                                                </h3>
                                             </div>
 
                                             <div className='product-pricetag'>
@@ -57,29 +68,53 @@ function IndividualArtistWorks() {
                                             </div>
 
 
-                                            <div className='gallery-artistprofile'>
 
-                                                <img src={artistimg} />
+
+                                            <Link to="/user_chat">
+                                                <div className='gallery-artistprofile'>
+                                                    <img src={artistimg} />
+                                                </div>
+                                            </Link>
+
+
+
+
+
+                                            <div className='gallery-chat-icon'>
+                                                <Link to="/user_chat">
+                                                    <Icon icon="fluent:chat-32-filled" className="gallery-chat" />
+                                                </Link>
 
                                             </div>
-
-                                            <div className='gallery-chat-icon'><Icon icon="fluent:chat-32-filled" className="gallery-chat" /></div>
                                         </div>
 
                                     </div>
+
+
+
 
 
 
 
                                 </div>
                                 <div class="col-6 gallery-col" >
+
+
                                     <div class="card" style={{ width: "20rem" }}>
-                                        <img src={product} class="card-img-top" alt="..." />
+                                        <Link to="/viewsinglework">
+                                            <img src={product} class="card-img-top" alt="..." />
+                                        </Link>
+
+
 
                                         <div class="artdesc">
                                             <div className='productdet'>
                                                 <h1 class="card-text1">Lumiere</h1>
-                                                <h3 class="card-text2">ADD TO CART</h3>
+                                                <h3 id="card-text2">
+                                                    <button>
+                                                        ADD TO CART
+                                                    </button>
+                                                </h3>
                                             </div>
 
                                             <div className='product-pricetag'>
@@ -88,29 +123,53 @@ function IndividualArtistWorks() {
                                             </div>
 
 
-                                            <div className='gallery-artistprofile'>
 
-                                                <img src={artistimg} />
+
+                                            <Link to="/user_chat">
+                                                <div className='gallery-artistprofile'>
+                                                    <img src={artistimg} />
+                                                </div>
+                                            </Link>
+
+
+
+
+
+                                            <div className='gallery-chat-icon'>
+                                                <Link to="/user_chat">
+                                                    <Icon icon="fluent:chat-32-filled" className="gallery-chat" />
+                                                </Link>
 
                                             </div>
-
-                                            <div className='gallery-chat-icon'><Icon icon="fluent:chat-32-filled" className="gallery-chat" /></div>
                                         </div>
 
                                     </div>
+
+
+
 
 
 
 
                                 </div>
                                 <div class="col-6 gallery-col" >
+
+
                                     <div class="card" style={{ width: "20rem" }}>
-                                        <img src={product} class="card-img-top" alt="..." />
+                                        <Link to="/viewsinglework">
+                                            <img src={product} class="card-img-top" alt="..." />
+                                        </Link>
+
+
 
                                         <div class="artdesc">
                                             <div className='productdet'>
                                                 <h1 class="card-text1">Lumiere</h1>
-                                                <h3 class="card-text2">ADD TO CART</h3>
+                                                <h3 id="card-text2">
+                                                    <button>
+                                                        ADD TO CART
+                                                    </button>
+                                                </h3>
                                             </div>
 
                                             <div className='product-pricetag'>
@@ -119,29 +178,53 @@ function IndividualArtistWorks() {
                                             </div>
 
 
-                                            <div className='gallery-artistprofile'>
 
-                                                <img src={artistimg} />
+
+                                            <Link to="/user_chat">
+                                                <div className='gallery-artistprofile'>
+                                                    <img src={artistimg} />
+                                                </div>
+                                            </Link>
+
+
+
+
+
+                                            <div className='gallery-chat-icon'>
+                                                <Link to="/user_chat">
+                                                    <Icon icon="fluent:chat-32-filled" className="gallery-chat" />
+                                                </Link>
 
                                             </div>
-
-                                            <div className='gallery-chat-icon'><Icon icon="fluent:chat-32-filled" className="gallery-chat" /></div>
                                         </div>
 
                                     </div>
+
+
+
 
 
 
 
                                 </div>
                                 <div class="col-6 gallery-col" >
+
+
                                     <div class="card" style={{ width: "20rem" }}>
-                                        <img src={product} class="card-img-top" alt="..." />
+                                        <Link to="/viewsinglework">
+                                            <img src={product} class="card-img-top" alt="..." />
+                                        </Link>
+
+
 
                                         <div class="artdesc">
                                             <div className='productdet'>
                                                 <h1 class="card-text1">Lumiere</h1>
-                                                <h3 class="card-text2">ADD TO CART</h3>
+                                                <h3 id="card-text2">
+                                                    <button>
+                                                        ADD TO CART
+                                                    </button>
+                                                </h3>
                                             </div>
 
                                             <div className='product-pricetag'>
@@ -150,13 +233,24 @@ function IndividualArtistWorks() {
                                             </div>
 
 
-                                            <div className='gallery-artistprofile'>
 
-                                                <img src={artistimg} />
+
+                                            <Link to="/user_chat">
+                                                <div className='gallery-artistprofile'>
+                                                    <img src={artistimg} />
+                                                </div>
+                                            </Link>
+
+
+
+
+
+                                            <div className='gallery-chat-icon'>
+                                                <Link to="/user_chat">
+                                                    <Icon icon="fluent:chat-32-filled" className="gallery-chat" />
+                                                </Link>
 
                                             </div>
-
-                                            <div className='gallery-chat-icon'><Icon icon="fluent:chat-32-filled" className="gallery-chat" /></div>
                                         </div>
 
                                     </div>
@@ -164,7 +258,13 @@ function IndividualArtistWorks() {
 
 
 
+
+
+
                                 </div>
+                               
+
+
 
 
 

@@ -2,7 +2,7 @@
 
     background-image: url("../../../../Assets/Admin\ bg.png");
     padding: 0 5rem;
-    height: 800px;
+    min-height: 800px;
 }
 
 .works-form h1 {

@@ -16,7 +16,7 @@ function DeliveryAgentSidebar() {
 
           <ul className="sidebar-nav" id="menu">
             <li className="active">
-              <Link to="/delivery_agent_routes">Routes</Link>
+              <Link to="/delivery_agent_routes">Requests</Link>
             </li>
             <li>
               <Link to="/delivery_agent_jobs">Jobs</Link>

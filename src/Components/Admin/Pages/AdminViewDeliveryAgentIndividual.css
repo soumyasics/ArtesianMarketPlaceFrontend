@@ -1,0 +1,15 @@
+.adminremoveagentbtn{
+    padding-top: 1rem;
+    padding-bottom: 3rem;
+    padding-left: 38rem;
+    
+}
+
+.adminremoveagentbtn button{
+    background-color: #ffff;
+    color: red;
+    height: 30px;
+    width: 130px;
+    border: 1px solid red;
+    margin-right: 15px;
+}
