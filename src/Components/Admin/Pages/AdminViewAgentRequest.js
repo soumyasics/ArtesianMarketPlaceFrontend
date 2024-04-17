@@ -1,12 +1,10 @@
-import React from 'react';
+import React from 'react'
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
 import AdminSidebar from '../AdminSidebar';
-import "./AdminViewAgent.css"
 import { Link } from 'react-router-dom';
 
-
-function AdminViewAgents() {
+function AdminViewAgentRequest() {
   return (
     <>
        <div className='AdminViewAgents'>
@@ -18,12 +16,7 @@ function AdminViewAgents() {
 
         <div className='Routes-table'>
 
-<h1>Delivery Agent</h1>
-
-<div className='deliveryagent-requestsbtn'>
-  <Link to="/admin_viewagentrequests"> <button>REQUESTS <Icon icon="fluent-mdl2:message-friend-request" className="agentrequest"/> </button> </Link>
-
-</div>
+<h1>Delivery Agent Requests</h1>
         
         <Table
                 striped
@@ -35,11 +28,9 @@ function AdminViewAgents() {
                 <thead style={{ height: "50px" }}>
                   <tr>
                     <th>SL</th>
-                    <th>Order</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Status</th>
-                    <th>Delivery</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Place</th>
                     <th>View More</th>
                    
                     
@@ -53,9 +44,7 @@ function AdminViewAgents() {
                         <td>Work name</td>
                         <td>Trivandram</td>
                         <td>Kollam</td>
-                        <td>Status</td>
-                        <td>Dtdc</td>
-                        <td><Link to="/Admin_viewdeliveryagentindividual">click here for further details...</Link></td>
+                        <td><Link to="/admin_viewrequestedagentdetails">click here for further details...</Link></td>
                         
                         
                        
@@ -77,4 +66,4 @@ function AdminViewAgents() {
   )
 }
 
-export default AdminViewAgents
+export default AdminViewAgentRequest
