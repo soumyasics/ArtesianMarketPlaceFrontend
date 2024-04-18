@@ -45,7 +45,7 @@ function ArtistSidebar() {
               <Link to="/artist_profile">Profile</Link>
             </li>
             <li>
-              <Link to="/artist_chat">Chat</Link>
+              <Link to="/artist_chatmainpage">Chat</Link>
             </li>
             <li onClick={handleLogout}>
               <Link >Logout</Link>

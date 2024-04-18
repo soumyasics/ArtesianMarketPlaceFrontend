@@ -1,166 +1,185 @@
-.gallery{
-    padding-bottom: 2rem;
+.gallery {
+    padding-top: 3rem;
 }
 
-.gallery h1{
+.gallery h1 {
     font-size: 25px;
     text-align: center;
     padding-bottom: 10px;
 }
 
-.gallery-search{
-margin-left:28rem;
+.gallery-search {
+    margin-left: 28rem;
 }
 
-.gallery-search input{
+.gallery-search input {
     border-radius: 20px;
-padding-left: 8rem;
+    padding-left: 8rem;
     height: 40px;
-width: 50%;
-  background-color: #fff;
-  border: 1px solid rgba(0,0,0,0.1); 
+    width: 50%;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
 
 }
 
-.gallery-search button{
-    height:40px;
-    width:150px;
+.gallery-search button {
+    height: 40px;
+    width: 150px;
     border: none;
     background-color: lightskyblue;
-   margin-left: 10px;
-   border-radius: 20px;
-   color: #fff;
-   font-size: 22px;
-   font-weight: 600;
+    margin-left: 10px;
+    border-radius: 20px;
+    color: #fff;
+    font-size: 22px;
+    font-weight: 600;
 }
 
-.explore-gallery span{
-font-weight: 600;
+.explore-gallery span {
+    font-weight: 600;
 }
 
-.artdesc{
-   height:3rem ;
-   background-color: lightskyblue;
-  
+.artdesc {
+    height: 3rem;
+    background-color: lightskyblue;
+
 }
 
-.artdesc h1{
+.artdesc h1 {
     margin-top: 8px;
-   padding-left: 5px;
+    padding-left: 5px;
     font-size: 25px;
-    color:#106EB1;
+    color: #106EB1;
 }
 
-.artdesc h3{
-    color:#fff;
-  margin-top: 18px;
-    margin-left: 9.5rem ;
+.artdesc h3 {
+    color: #fff;
+    margin-top: 18px;
+    margin-left: 9.5rem;
     font-size: 10px;
     font-weight: 800;
 }
 
-.productdet{
+
+
+.productdet {
     display: flex;
 }
-.product-pricetag{
+
+.product-pricetag {
     position: relative;
-    bottom:15.8rem;
+    bottom: 15.8rem;
     border-bottom-right-radius: 30px;
 
     background-color: #fff;
     height: 3rem;
-    width:25%
+    width: 25%
 }
 
-.product-pricetag h1{
-    
+.product-pricetag h1 {
+
     font-size: 20px;
     padding-top: 10px;
 }
-.galleryicon{
+
+.galleryicon {
     position: relative;
     bottom: 9.2rem;
     margin-left: 16rem;
 }
 
-.loveicon{
+.loveicon {
     height: 30px;
-    width:30px;
-    color:pink;
-    
+    width: 30px;
+    color: pink;
+
 }
-.gallery-artistprofile{
+
+.gallery-artistprofile {
     position: relative;
     bottom: 18rem;
-    left:7.7rem
+    left: 7.7rem
 }
 
-.gallery-artistprofile img{
-    height:45px;
+.gallery-artistprofile img {
+    height: 45px;
     width: 45px;
     border-radius: 50%;
-    
+
 }
 
-.gallery-chat-icon{
+.gallery-chat-icon {
     position: relative;
-    bottom:21.3rem;
-    left:9.1rem;
+    bottom: 21.3rem;
+    left: 9.1rem;
 }
 
-.gallery-chat{
+.gallery-chat {
     height: 25px;
-    width:25px;
-    
-    color:#fff
+    width: 25px;
+
+    color: #fff
 }
 
-.explore-gallery{
+.explore-gallery {
     padding-top: 30px;
 }
 
-.explore-gallery p{
+.explore-gallery p {
     text-align: center;
     padding: 0 25rem;
     padding-bottom: 2rem;
 }
 
-.gallery-row{
-width: 60%;
-margin: auto;
-padding-bottom: 1rem;
-}
-.gallery-col{
-    padding-bottom: 1rem;  
+.gallery-row {
+    width: 60%;
+    margin: auto;
+    padding-bottom: 1rem;
 }
 
-.gallery-pages{
+.gallery-col {
+    padding-bottom: 1rem;
+}
+
+.gallery-col a {
+    text-decoration: none;
+}
+
+.gallery-pages {
     display: flex;
     justify-content: center;
     padding-bottom: 3rem;
 }
 
-.gallery-pages h1{
+.gallery-pages h1 {
     margin-top: 12px;
-font-size: 18px;
-padding: 0 7px;
-font-weight: 600;
+    font-size: 18px;
+    padding: 0 7px;
+    font-weight: 600;
 }
 
-.page1icon{
+.page1icon {
     height: 45px;
     width: 45px;
     color: #2196F3;
-  
+
 }
 
-.page2icon{
+.page2icon {
     height: 45px;
     width: 45px;
     color: #2196F3;
-   
+
 }
 
-.gallery-products{
+.gallery-products {
     padding-bottom: 5.8rem;
+}
+
+#card-text2 {}
+
+#card-text2 button {
+    color: #fff;
+    border: none;
+    background-color: transparent;
+    font-weight: 600;
 }

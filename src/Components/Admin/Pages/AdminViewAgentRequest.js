@@ -1,22 +1,22 @@
 import React from 'react'
-import "./DeliveryRoutes.css"
-import DeliveryAgentSidebar from '../../DeliveryAgentSidebar'
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
+import AdminSidebar from '../AdminSidebar';
+import { Link } from 'react-router-dom';
 
-function DeliveryRoutes() {
+function AdminViewAgentRequest() {
   return (
-   <>
-    <div className='DeliveryRoutes'>
+    <>
+       <div className='AdminViewAgents'>
     <div className="row">
         <div className="col-2">
-        <DeliveryAgentSidebar/>
+        <AdminSidebar/>
         </div>
-        <div class='col-10 routes' >
+        <div class='col-10 Admin-agentlist' >
 
-<div className='Routes-table'>
+        <div className='Routes-table'>
 
-<h1>Order Requests</h1>
+<h1>Delivery Agent Requests</h1>
         
         <Table
                 striped
@@ -28,11 +28,10 @@ function DeliveryRoutes() {
                 <thead style={{ height: "50px" }}>
                   <tr>
                     <th>SL</th>
-                    <th>Order</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Status</th>
-                    <th>Delivery</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Place</th>
+                    <th>View More</th>
                    
                     
                     
@@ -45,13 +44,7 @@ function DeliveryRoutes() {
                         <td>Work name</td>
                         <td>Trivandram</td>
                         <td>Kollam</td>
-                        <td id="routes-accept">Status
-                        <select >
-                        <option id='status-icon'>Status</option>
-                        <option id="status" value='Accepted'> Accepted </option>
-                      </select>
-                        </td>
-                        <td>Dtdc</td>
+                        <td><Link to="/admin_viewrequestedagentdetails">click here for further details...</Link></td>
                         
                         
                        
@@ -64,13 +57,13 @@ function DeliveryRoutes() {
 
         </div>
 
-    
+   
 
-        </div>
-        </div>
+            </div>
+</div>
     </div>
-   </>
+    </>
   )
 }
 
-export default DeliveryRoutes
+export default AdminViewAgentRequest

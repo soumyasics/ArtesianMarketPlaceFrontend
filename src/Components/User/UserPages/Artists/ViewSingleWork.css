@@ -1,0 +1,71 @@
+.ViewSingleWork {
+    margin: 0;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+.viewsingleworkimg {
+    padding-left: 3rem;
+    text-align: center;
+
+}
+
+.viewsingleworkimg h1 {
+    padding-top: .5rem;
+
+
+}
+
+.viewsingleworkimg h2 {
+    font-weight: 600;
+}
+
+.viewsingleworkbtn {
+    /* margin-left: 34.4rem; */
+}
+
+.viewsinglework-details {
+    padding-top: 2.9rem;
+    padding-left: 13rem;
+}
+
+.viewsinglework-details h2 {
+    padding-top: 1rem;
+    padding-left: 4rem;
+}
+
+.viewsingleworkbtn {
+    padding-top: 1rem;
+    padding-left: 2.5rem;
+}
+
+.viewsingleworkbtn button {
+    background-color: #ffff;
+    height: 35px;
+    width: 150px;
+    border: 1px solid #28A6FF;
+    color: #28A6FF;
+    margin-right: 15px;
+
+
+}
+
+.viewsingleworkbtn2 {
+    padding-top: 1rem;
+    padding-left: 2.5rem;
+}
+
+.viewsingleworkbtn2 button {
+    background-color: #ffff;
+    height: 35px;
+    width: 150px;
+    border: 1px solid #b583da;
+    margin-right: 15px;
+    color: #b583da;
+
+}
+
+.billingicon {
+    height: 25px;
+    width: 22px;
+}

@@ -3,3 +3,24 @@
     padding: 0 5rem;
     height: 800px;
 }
+.deliveryagent-requestsbtn{
+    padding-top: 2rem;
+    margin-left: 53.5rem;
+   
+}
+
+.deliveryagent-requestsbtn button{
+    background-color: #75d7f0;
+    color: #fff; 
+font-weight: 600;
+border: none;
+height: 30px;
+width: 135px;
+border: 1px solid #fff;
+
+}
+
+.agentrequest{
+    margin-bottom: .2rem;
+    margin-left: .3rem;
+}

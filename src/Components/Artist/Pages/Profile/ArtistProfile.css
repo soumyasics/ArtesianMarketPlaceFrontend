@@ -1,6 +1,6 @@
 .artistProfile{
     background-image: url("../../../../Assets/Admin\ bg.png");
-    height : 1000px;
+    min-height : 800px;
     padding: 0 3rem;
     
 }
@@ -10,6 +10,7 @@
 
 .artistProfilepage{
     padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 /* .Cover-img h1{
@@ -25,6 +26,11 @@
     height:200px;
     width: 200px;
     border-radius: 50%;
+    
+}
+
+.artistname{
+    font-weight: 600;
 }
 
 .artistprofile-img{
@@ -45,6 +51,7 @@
 .artistprofile-text p{
 margin-top: 5px;
 color: #fff;
+font-weight: 600;
 }
 
 .artistname{
@@ -58,19 +65,20 @@ color: #fff;
     text-align: center;
    padding: 0 17.8rem;
     padding-top: 22rem;
+    font-weight: 600;
     
 }
 
 .artistprofile-details{
     padding-top: 40px;
-height: 400px;
+/* height: 400px; */
 width: 70%;
 margin:auto
 
 }
 
 .artistprofileinput{
-    
+    font-weight: 600;
     border: 2px solid transparent ;
 height:30px;
     background-color: #F3FAFF;
@@ -82,6 +90,7 @@ height:30px;
     padding: 0 10px;
 }
 .artistprofileinput2{
+    font-weight: 600;
     border: 2px solid transparent ;
     height:100px;
         background-color: #F3FAFF;

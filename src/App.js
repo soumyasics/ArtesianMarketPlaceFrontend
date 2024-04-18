@@ -41,6 +41,11 @@ import DeliveryAgent_Profile from "./Components/DeliveryAgent/Pages/Profile/Deli
 import AdminViewDeliveryAgentIndividual from "./Components/Admin/Pages/AdminViewDeliveryAgentIndividual";
 import UserOrders from "./Components/User/UserPages/Orders/UserOrders";
 import IndividualArtistWorks from "./Components/User/UserPages/Artists/IndividualArtistWorks";
+import ArtistChatmain from "./Components/Artist/Pages/Chat/ArtistChatmain";
+import ViewSingleWork from "./Components/User/UserPages/Artists/ViewSingleWork";
+import UserChat from "./Components/User/UserPages/Chat/UserChat";
+import AdminViewAgentRequest from "./Components/Admin/Pages/AdminViewAgentRequest";
+import AdminViewRequestedAgent from "./Components/Admin/Pages/AdminViewRequestedAgent";
 
 
 const url = "http://localhost:4004";
@@ -50,6 +55,7 @@ function App() {
     <BrowserRouter>
       <div>
         <Routes>
+          
           {/* Admin */}
 
           <Route path="admin_login" element={<AdminLogin />} />
@@ -58,6 +64,10 @@ function App() {
           <Route path="admin_viewagent" element={<AdminViewAgents />} />
           <Route path="admin_viewartistindividual" element={<AdminViewArtistIndividual />}/>
           <Route path="admin_viewuserindividual"  element={<AdminViewUserIndividual />}  />
+          
+          <Route path="admin_viewagentrequests"  element={<AdminViewAgentRequest />}  />
+          <Route path="admin_viewrequestedagentdetails"  element={<AdminViewRequestedAgent/>}/>
+
           <Route  path="admin_viewdeliveryagentindividual"  element={<AdminViewDeliveryAgentIndividual />}  />
 
           {/* User */}
