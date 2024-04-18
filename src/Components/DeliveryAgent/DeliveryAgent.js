@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import axiosInstance from '../../Schemas/BaseUrl'
 import { toast } from "react-toastify";
 
@@ -32,7 +32,7 @@ function DeliveryAgent() {
   }
 
 
-
+const navigate=useNavigate()
   const formValidation = (fieldName, value) => {
 
     if (!value.trim()) { return `${fieldName} is required` }
@@ -59,8 +59,14 @@ function DeliveryAgent() {
       console.log(res);
       if(res.data.status==200){
         toast.success("Login Succesfully")
+        localStorage.setItem("deliveryid",res.data.data._id)
+        navigate("/delivery_agent_profile")
+
       }
       else if(res.data.status==500){
+        toast.error(res.data.msg)
+      }
+      else if(res.data.status==407){
         toast.error(res.data.msg)
       }
     })

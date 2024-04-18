@@ -74,7 +74,7 @@ function App() {
           <Route path="/user_dashboard" element={<Dashboard />} />
           <Route path="/aboutus" element={<About />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/user_profile" element={<UserProfile />} />
+          {/* <Route path="/user_profile" element={<UserProfile url={url}/>} /> */}
           <Route path="/user_cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order_confirmed" element={<OrderConfirm />} />
@@ -93,7 +93,7 @@ function App() {
           <Route path="/artist_forgetpassword" element={<ArtistForgetPassword />}/>
           <Route path="/artist_register" element={<ArtistRegistration />} />
           <Route path="/artist_orders" element={<ArtistOrdrers />} />
-          <Route path="/artist_profile" element={<ArtistProfile />} />
+          <Route path="/artist_profile" element={<ArtistProfile url={url}/>} />
           <Route path="/artist_works" element={<ArtistWorks />} />
           <Route path="/artist_chat" element={<ArtistChat />} />
 
