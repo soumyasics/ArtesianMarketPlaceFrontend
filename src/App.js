@@ -58,17 +58,17 @@ function App() {
           
           {/* Admin */}
 
-          <Route path="admin_login" element={<AdminLogin />} />
+          <Route path="admin" element={<AdminLogin />} />
           <Route path="admin_viewuser" element={<AdminViewUsers />} />
           <Route path="admin_viewartist" element={<AdminViewArtists />} />
           <Route path="admin_viewagent" element={<AdminViewAgents />} />
-          <Route path="admin_viewartistindividual" element={<AdminViewArtistIndividual />}/>
-          <Route path="admin_viewuserindividual"  element={<AdminViewUserIndividual />}  />
+          <Route path="/admin_viewartistindividual/:id" element={<AdminViewArtistIndividual url={url}/>}/>
+          <Route path="/admin_viewuserindividual/:id"  element={<AdminViewUserIndividual url={url} />}  />
           
           <Route path="admin_viewagentrequests"  element={<AdminViewAgentRequest />}  />
-          <Route path="admin_viewrequestedagentdetails"  element={<AdminViewRequestedAgent/>}/>
+          <Route path='/admin_viewrequestedagentdetails/:id'  element={<AdminViewRequestedAgent url={url}/>}/>
 
-          <Route  path="admin_viewdeliveryagentindividual"  element={<AdminViewDeliveryAgentIndividual />}  />
+          <Route  path="/admin_viewdeliveryagentindividua/:id"  element={<AdminViewDeliveryAgentIndividual url={url}/>}  />
 
           {/* User */}
 

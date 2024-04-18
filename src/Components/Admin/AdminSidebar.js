@@ -1,9 +1,17 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 
 function AdminSidebar() {
+  const navigate=useNavigate()
+  const[readerid,setReaderid]=useState(null);
+  const handleLogout = () => {
+    localStorage.removeItem("adminid");
+    setReaderid(null);
+    navigate("/admin")
+  };
+
   return (
     <div>
          <div id="wrapper">
@@ -24,6 +32,10 @@ function AdminSidebar() {
             <li>
               <Link to="/admin_viewagent">Delivery Agent</Link>
             </li>
+            <li>
+              <Link onClick={handleLogout}>Logout</Link>
+            </li>
+
            
           </ul>
         </div>

@@ -3,16 +3,22 @@ import AdminSidebar from '../AdminSidebar';
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
 import "./AdminViewUser.css"
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axiosInstance from '../../../Schemas/BaseUrl';
 
 
 function AdminViewUsers() {
   const [viewuser, setViewuser] = useState([])
 
+  const adminid=localStorage.getItem("adminid")
+console.log(adminid);
+  const navigate=useNavigate()
+  if(adminid===null){
+    navigate("/admin")
+  }
+
  
   useEffect(()=>{
-    console.log('hiiii');
     axiosInstance.post("/viewUsers")
       .then((res) => {
         console.log(res, "response");
@@ -94,7 +100,7 @@ function AdminViewUsers() {
                       <td>{user.email}</td>
                       <td>{user.city},{user.district}</td>
                       <td>{user.contact}</td>         
-                      <td><Link to="/Admin_viewuserindividual">click here for further details...</Link></td>
+                      <td><Link to={`/Admin_viewuserindividual/${user._id}`}>click here for further details...</Link></td>
                     </tr> 
                       )
 

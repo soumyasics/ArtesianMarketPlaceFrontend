@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import logo from "../../Assets/logo.svg"
 import "./AdminLogin.css"
 import {toast}from "react-toastify"
+import { useNavigate } from 'react-router-dom'
 
 function AdminLogin() {
 
@@ -17,12 +18,14 @@ const changefn=((a)=>{
     ...data,[a.target.name]:a.target.value
   })
 })
-
+const navigate=useNavigate()
 const submitfn=((a)=>{
   a.preventDefault()
   if(username==data.username){
     if(password==data.password){
       toast.success("Login Successfully")
+      localStorage.setItem("adminid",1)
+      navigate("/admin_viewuser")
     }
     else{
       toast.error("Password Error")
