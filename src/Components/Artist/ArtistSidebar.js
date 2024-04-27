@@ -1,10 +1,29 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './ArtistSidebar.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 
 function ArtistSidebar() {
+  const artistid = localStorage.getItem("artistid");
+  console.log(artistid);
+
+  const[readerid,setReaderid]=useState(null);
+  const handleLogout = () => {
+    localStorage.removeItem("artistid");
+    setReaderid(null);
+  };
+
+  const navigate=useNavigate()
+
+  useEffect(() => {
+    if (localStorage.getItem("artistid") == null) {
+      navigate("/artist_login");
+    }
+  });
+
+
+
   return (
     <div>
       <div id="wrapper">
@@ -26,8 +45,12 @@ function ArtistSidebar() {
               <Link to="/artist_profile">Profile</Link>
             </li>
             <li>
-              <Link to="/artist_chat">Chat</Link>
+              <Link to="/artist_chatmainpage">Chat</Link>
             </li>
+            <li onClick={handleLogout}>
+              <Link >Logout</Link>
+            </li>
+
           </ul>
         </div>
       </div>

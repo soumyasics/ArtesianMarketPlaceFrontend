@@ -1,0 +1,68 @@
+
+.ArtistChatmain{
+    padding: 0 5rem;
+    padding-bottom: 5rem;
+}
+.ArtistChatmain h1{
+
+padding-top: 3rem;
+padding-bottom: 3rem;
+}
+
+.artist-listchatting{
+    padding-bottom: .5rem;
+    
+}
+.artist-listchatting a{
+text-decoration: none;
+color:black;
+}
+
+.artistchatmain-lists{
+    display: flex;
+   
+    border: 1px solid black;
+    border-radius: 10px;
+    height: 100px;
+    width: 100%;
+    padding-top: .9rem;
+    padding-left: 2rem;
+    padding-bottom: 3rem;
+}
+
+
+
+.artistchatmain-lists:hover{
+    background-color: skyblue;
+}
+
+.artistchatmaincontent{
+    padding-top: .9rem;
+    padding-left: .5rem;
+}
+.artistchatmain-lists h2{
+    font-size: 18px;
+    font-weight: 600;
+    padding-left: .5rem;
+    margin: 0;
+}
+.artistchatmain-lists h3{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: -1.9rem;
+    padding-left: 50rem;
+    
+    
+}
+.artistchatmain-lists p{
+    font-size: 14px;
+    margin: 0;
+    padding-left: .6rem;
+   
+    
+}
+.artistchatmainimg img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}

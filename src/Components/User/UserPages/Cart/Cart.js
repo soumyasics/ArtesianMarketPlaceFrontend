@@ -37,20 +37,20 @@ e.preventDefault();
             <table width={"100%"} className='cart-table'>
               <thead >
                 <tr >
-                  <th width={"75%"}>ITEM</th>
-                  <th width={"40%"}>QTY</th>
-                  <th width={"40%"}>PRICE</th>
+                  <th width={"93%"}>ITEM</th>
+                  {/* <th width={"40%"}>QTY</th> */}
+                  <th width={"30%"}>PRICE</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td id="cartitemscolb"><img src={itemimg} alt='item-img' /><h3>Lumiere</h3></td>
-                  <td id='bold'><Icon icon="clarity:minus-line" className="add"/>&nbsp;1&nbsp;<Icon icon="clarity:plus-line" className="add"/></td>
+                  {/* <td id='bold'><Icon icon="clarity:minus-line" className="add"/>&nbsp;1&nbsp;<Icon icon="clarity:plus-line" className="add"/></td> */}
                   <td id='bold'><span>₹</span>100</td>
                 </tr>
                 <tr>
                   <td id="cartitemscolb"><img src={itemimg} alt='item-img' /><h3>Lumiere</h3></td>
-                  <td id='bold'><Icon icon="clarity:minus-line" className="add"/>&nbsp;10&nbsp;<Icon icon="clarity:plus-line" className="add"/></td>
+                  {/* <td id='bold'><Icon icon="clarity:minus-line" className="add"/>&nbsp;10&nbsp;<Icon icon="clarity:plus-line" className="add"/></td> */}
                   <td id='bold'><span>₹</span>1000</td>
                 </tr>
 
@@ -106,7 +106,7 @@ e.preventDefault();
  </form>
         </div>
 
-        <section id="featured-artist">
+        {/* <section id="featured-artist">
 
 <h1>Featured Artist</h1>
 <h2>We provide the tools and support to help your artistic compass guide you.</h2>
@@ -140,7 +140,7 @@ e.preventDefault();
 </div>
 
 
-</section>
+</section> */}
 
       </div>
       <Footer />

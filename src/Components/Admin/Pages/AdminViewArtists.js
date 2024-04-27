@@ -1,13 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import AdminSidebar from '../AdminSidebar'
 import Table from "react-bootstrap/Table";
 import { Icon } from "@iconify/react";
 import "./AdminViewArtist.css"
 import { Link } from 'react-router-dom';
+import axiosInstance from '../../../Schemas/BaseUrl';
 
 
 
 function AdminViewArtists() {
+  const[artist,setArtist]=useState([])
+  useEffect(()=>{
+    axiosInstance.post(`viewArtists`)
+    .then((res)=>{
+      console.log(res);
+      setArtist(res.data.data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  },[])
+
   return (
     <>
      <div className='AdminViewArtists'>
@@ -31,11 +44,11 @@ function AdminViewArtists() {
                 <thead style={{ height: "50px" }}>
                   <tr>
                     <th>SL</th>
-                    <th>Order</th>
-                    <th>From</th>
-                    <th>To</th>
-                    <th>Status</th>
-                    <th>Delivery</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Place</th>
+                    {/* <th>Delivery</th> */}
                     <th>View More</th>
                    
                     
@@ -43,21 +56,30 @@ function AdminViewArtists() {
                   </tr>
                 </thead>
                 <tbody >
+                {artist ? (
+  artist.length ? (
+    artist.map((a,index) => {
+      // const serialNumber = index + 1;
+         return( 
+
         
                       <tr >
-                        <td>1</td>
-                        <td>Work name</td>
-                        <td>Trivandram</td>
-                        <td>Kollam</td>
-                        <td>Status</td>
-                        <td>Dtdc</td>
-                        <td><Link to="/Admin_viewartistindividual">click here for further details...</Link></td>
-                        
-                        
-                        
-                       
-                      
+                        <td>{index+1}</td>
+                        <td>{a?.firstname}</td>
+                        <td>{a?.email}</td>
+                        <td>{a?.contact}</td>
+                        {/* <td>Status</td> */}
+                        <td>{a?.city}</td>
+                        <td><Link to={`/Admin_viewartistindividual/${a._id}`}>click here for further details...</Link></td>
                       </tr>
+                                        )
+                                      })
+                                   ) : (
+                                     <div>No data available</div>
+                                     )
+                                     ) : (
+                                       <div>No request is available</div>
+                                     )}
                 
                 </tbody>
               </Table>

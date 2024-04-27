@@ -86,12 +86,16 @@ const handleEdit = () => {
           }
 
       
-        axiosInstance.post(`editUserById/${userid}`, editedProfile)
+        axiosInstance.post(`editUserById/${userid}`, editedProfile, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },})
             .then((res) => {
                 console.log(res);
                 toast.success("Updated Succesfully")
                 setData(editedProfile);
                 setEditMode(false);
+                window.location.reload()
                 
             })
             .catch((err) => {
@@ -116,8 +120,8 @@ const handleEdit = () => {
                 </div>
 
                 <div className='userprofile-content'>
-                    <p>Lumière canvases are explosions of color, a vibrant dance of emotions poured onto the surface. Inspired by the chaos and beauty of the urban landscape, she uses bold strokes and gestural movements to capture the fleeting energy of life. Every piece is an invitation to lose yourself in the rhythm of color and find your own story within the abstract.
-                    </p>
+                    {/* <p>Lumière canvases are explosions of color, a vibrant dance of emotions poured onto the surface. Inspired by the chaos and beauty of the urban landscape, she uses bold strokes and gestural movements to capture the fleeting energy of life. Every piece is an invitation to lose yourself in the rhythm of color and find your own story within the abstract. */}
+                    {/* </p> */}
                 </div>
 
                 <div className=' userprofile-details '>
@@ -128,31 +132,31 @@ const handleEdit = () => {
                         
                         
                     <div className='userprofileinput '><p>Name : 
-                    {editMode ? <input type="text" name="firstname" value={editedProfile.firstname}style={{width:"140px"}} onChange={handleChange} /> : data.firstname}
-                     {editMode ? <input type="text" name="lastname" value={editedProfile.lastname} style={{width:"70px"}} onChange={handleChange}/> : data.lastname} 
+                    {editMode ? <input type="text" name="firstname" value={editedProfile.firstname}style={{width:"140px",borderColor:"red"}} onChange={handleChange} /> : data.firstname}
+                     {editMode ? <input type="text" name="lastname" value={editedProfile.lastname} style={{width:"70px",borderColor:"red"}} onChange={handleChange}/> : data.lastname} 
                         </p></div>
                     <div className='userprofileinput '><p>DOB :
-                       {editMode ? <input type='date' name='dob' value={editedProfile.dob} onChange={handleChange}/>:  formattedDateOfBirth}
+                       {editMode ? <input type='date' name='dob' value={editedProfile.dob} onChange={handleChange} style={{borderColor:"red"}}/>:  formattedDateOfBirth}
                          </p></div>
                     <div className='userprofileinput '><p>Email :
-                        {editMode ?<input type='email' name='email' value={editedProfile.email} onChange={handleChange}/> :data.email}
+                        {editMode ?<input type='email' name='email' value={editedProfile.email} onChange={handleChange} style={{borderColor:"red"}}/> :data.email}
                          </p></div>
                     </div>
 
                     <div className='detailsbar-2 col-6'>
                     <div className='userprofileinput '><p>Age : {age}</p></div>
                     <div className='userprofileinput '><p>Contact number :
-                        {editMode ?<input type='number' name='contact' value={editedProfile.contact} style={{width:"135px"}}  onChange={handleChange}/> :data.contact}
+                        {editMode ?<input type='number' name='contact' value={editedProfile.contact} style={{width:"135px",borderColor:"red"}}  onChange={handleChange}/> :data.contact}
                          </p></div>
                     </div>
 
                     <div row>
                         <div className='col-12'>
                         <div className='userprofileinput2 '><p>Address :
-                          {editMode?<input type='text' name='housename' value={editedProfile.housename} onChange={handleChange}/> :data.housename} 
-                          {editMode?<input type='text' name='city' value={editedProfile.city} onChange={handleChange} /> : data.city} 
-                          {editMode?<input type='text' name='district' value={editedProfile.district} style={{marginLeft:"65px"}} onChange={handleChange}/> : data.district} 
-                          {editMode?<input type='text' name='pincode' value={editedProfile.pincode} onChange={handleChange} /> : data.pincode}
+                          {editMode?<input type='text' name='housename' value={editedProfile.housename} onChange={handleChange} style={{borderColor:"red"}}/> :data.housename} 
+                          {editMode?<input type='text' name='city' value={editedProfile.city} onChange={handleChange} style={{borderColor:"red"}}/> : data.city} 
+                          {editMode?<input type='text' name='district' value={editedProfile.district} style={{marginLeft:"65px" ,borderColor:"red"}} onChange={handleChange} /> : data.district} 
+                          {editMode?<input type='text' name='pincode' value={editedProfile.pincode} onChange={handleChange}style={{borderColor:"red"}} /> : data.pincode}
                           {editMode?<input type='file' name='image' style={{marginLeft:"65px"}}   onChange={(e) => handleChange(e)} /> :""}
 
                             </p></div>

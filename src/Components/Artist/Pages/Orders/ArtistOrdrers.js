@@ -3,6 +3,7 @@ import ArtistSidebar from '../../ArtistSidebar'
 import Table from "react-bootstrap/Table";
 import "./ArtistOrders.css";
 import { Icon } from "@iconify/react";
+import workimg from "../../../../Assets/Rectangle 12.png"
 
 function ArtistOrdrers() {
   return (
@@ -39,11 +40,15 @@ function ArtistOrdrers() {
                     
                   </tr>
                 </thead>
-                <tbody >
+                <tbody  >
         
                       <tr >
                         <td>1</td>
-                        <td>Work name</td>
+                        <td id='workorders'>
+                         
+                         <img src={workimg}/>
+                         <p>Work Name </p>
+                         </td>
                         <td>Lumiere</td>
                         <td>250</td>
                         <td>Fulfiled</td>
@@ -52,6 +57,7 @@ function ArtistOrdrers() {
                        
                       
                       </tr>
+                     
                 
                 </tbody>
               </Table>

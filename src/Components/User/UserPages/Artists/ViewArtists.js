@@ -8,10 +8,10 @@ import Usernav from '../../../Navbar/Usernav'
 import { Link } from 'react-router-dom'
 import NavMain from '../../../Navbar/NavMain'
 
-function ViewArtists() {
+function ViewArtists({url}) {
     return (
         <>
-            <NavMain />
+            <NavMain url={url} />
 
             <section className='Cover-img'>
                 <h1>Artists</h1>

@@ -4,11 +4,13 @@ import { Link, useNavigate } from 'react-router-dom'
 import logo from "../../Assets/Home Logo.png"
 import Profileimg from "../../Assets/aubrey-graham-photo-u164.jpg"
 import axiosInstance from '../../Schemas/BaseUrl'
+import { toast } from 'react-toastify'
 
 
 
-function Usernav() {
-  const url = "http://localhost:4004";
+function Usernav({url}) {
+  console.log(url,"hello");
+  // const url = "http://localhost:4004";
 
     const navigate = useNavigate()
     const userid=localStorage.getItem("userid")
@@ -30,19 +32,32 @@ function Usernav() {
 console.log(`${url}/${data.image?.filename}`);
 
 
+useEffect(() => {
+  if (localStorage.getItem("userid") == null) {
+    navigate("/user_login");
+  }
+});
+
+
+const[readerid,setReaderid]=useState(null);
+
+const handleLogout = () => {
+  localStorage.removeItem("userid");
+  setReaderid(null);
+};
 
   return (
 <nav id='common-home-navbar' class="navbar bg-body-tertiary">
   <div class="container-fluid">
   <img style={{ cursor: "pointer"}}
           src={logo}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("")}
           alt="Logo"      
     
           id="logo"/>
     
     <form class="d-flex usernav-links" role="search">
-      <p><Link>Home</Link></p>
+      <p><Link to="/homepage_user">Home</Link></p>
       <p><Link to ="/aboutus">About</Link></p>
       <p><Link to ="/view_artists">Artist</Link></p>
       <p><Link to ="/gallery">Gallery</Link></p>
@@ -62,7 +77,7 @@ console.log(`${url}/${data.image?.filename}`);
    <li><Link to="/user_cart" class="dropdown-item ">Cart</Link></li>
    <li><Link to="/view_orders" class="dropdown-item ">My Orders</Link></li>
    <li><hr class="dropdown-divider"/></li>
-   <li><a class="dropdown-item" href="#">Logout</a></li>
+   <li onClick={handleLogout}><a class="dropdown-item" href="#" >Logout</a></li>
  </ul>
 </div>
  
