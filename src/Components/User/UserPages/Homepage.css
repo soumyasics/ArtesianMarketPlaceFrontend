@@ -1,0 +1,145 @@
+.body{
+    overflow-x: hidden;
+}
+.navbarmain{
+    background-color: #a478686b;
+    
+}
+.brndname{
+    color: #a47868;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 28pt;
+}
+.logo1{
+    width: 40px;
+    height: 40px;
+}
+.icnloglink{
+    /* text-align: right; */
+    color: #a47868;
+    justify-content: end;
+}
+.icnloglink:link{
+    text-decoration: none;
+}
+.logo{
+ height: 100px;
+ width: 100px;
+}
+.nav1{
+    background-color: #c0b1aaad;
+}
+/* .homeimage{ */
+    /* position: fixed; */
+/* } */
+.srch{
+   
+    size: 150px 200px;
+}
+.navsrchbtn{
+    background-color: #a47868;
+    color: white;
+    border: none;
+    width: 150px;
+    border-radius: 20px;
+}
+.inputsrch{
+    border: 1px solid #a47868;
+    border-radius: 5px;
+}
+.cardtle{
+    color: rgb(248, 232, 232);
+    font-size: 50px;
+    text-shadow: black 3px 4px;
+    /* text-decoration: underline; */
+}
+.cardtxt{
+    color:white;
+    size: 50px;
+    text-shadow: black 3px 2px;
+    letter-spacing: 3px;
+
+}
+.navcontent, .navcontent:link{
+    
+    text-decoration: none;
+    display: inline-block;
+    color:#a47868 ;
+}
+.navcontent:hover{
+    color: black;
+}
+.cardbtn{
+    background-color:#d7b5a9;
+    border-radius: 20px;
+    color: white;
+    color: black;
+    padding: 15px;
+    /* position: fixed; */
+}
+.cardbtn:link{
+    text-decoration: none;
+} 
+.card-viewdetails{
+    color: #a47868;
+}
+.card-viewdetails:link,.card-viewdetails:hover{
+    text-decoration: none;
+    color: black;
+}
+#cardtitle{
+    align-items: center;
+}
+.cardimageset1{
+    border-radius: 5px;
+}
+.cardimageset1:hover{
+box-shadow: 3px 2px 4px;
+scale: 0.9;
+
+}
+.headers{
+    text-align: center;
+    color: #a47868;
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container1{
+    /* display: flex; */
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /* height: 100vh; */
+  /* border: 2px dashed #a47868; */
+  flex-wrap: wrap;
+  overflow-x: hidden;
+  /* max-width: fit-content; */
+ 
+  /* position: absolute; */
+}
+.containerfooter{
+    background-color: #a47868c2;
+}
+.homeimage{
+    background-attachment: fixed;
+}
+.elephantcard{
+    border: none;
+}
+.elephantimg{
+    width: 200px;
+    height: 300px;
+    border-radius: 5px;
+    padding: 10px;
+    margin-left: 50px;
+    border: #a47868 dashed 2px;
+}
+.elephantcardtext{
+text-align: justify;
+padding: 30px;
+font-style:italic;
+margin-right: 150px;
+}

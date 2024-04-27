@@ -1,430 +1,373 @@
-import React from 'react'
-import "./Gallery.css"
-import Navbar from '../../../Navbar/Navbar'
-import Footer from '../../../Footer/Footer'
-import product from "../../../../Assets/Rectangle 12.png"
+import React, { useEffect, useState } from "react";
+import "./Gallery.css";
+import Navbar from "../../../Navbar/Navbar";
+import Footer from "../../../Footer/Footer";
+import product from "../../../../Assets/Rectangle 12.png";
 import { Icon } from "@iconify/react";
-import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg"
-import Usernav from '../../../Navbar/Usernav'
-import NavMain from '../../../Navbar/NavMain'
-import { Link } from 'react-router-dom'
-function Gallery() {
+import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg";
+import Usernav from "../../../Navbar/Usernav";
+import NavMain from "../../../Navbar/NavMain";
+import { Link } from "react-router-dom";
+import axiosInstance from "../../../../Schemas/BaseUrl";
+function Gallery({ url }) {
+  const [art, setArt] = useState([]);
+
+  useEffect(() => {
+    axiosInstance
+      .post(`viewArtworks`)
+      .then((res) => {
+        console.log(res);
+        setArt(res.data.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   return (
     <>
-      <NavMain />
+      <NavMain url={url} />
 
-
-      <section className='Cover-img'>
+      <section className="Cover-img">
         <h1>Gallery</h1>
       </section>
 
-
-      <div className='gallery'>
-
+      <div className="gallery">
         <h1>SEARCH</h1>
 
-        <div className='gallery-search'>
-
-          <input type='text' placeholder='Work Name / Artist Name' />
+        <div className="gallery-search">
+          <input type="text" placeholder="Work Name / Artist Name" />
           <button>Search</button>
-
         </div>
 
-        <div className='explore-gallery'>
+        <div className="explore-gallery">
           <h1>EXPLORE GALLERY</h1>
-          <p>Dive into a vibrant ocean of creativity. <span>Museofire</span>, passionate artists meet art lovers seeking the extraordinary.
+          <p>
+            Dive into a vibrant ocean of creativity. <span>Museofire</span>,
+            passionate artists meet art lovers seeking the extraordinary.
           </p>
-          <div className='gallery-products'>
-
+          <div className="gallery-products">
             <div class="container text-center">
               <div class="row gallery-row">
+                {art.length ? (
+                  art.map((a) => {
+                    return (
+                      <div class="col-6 gallery-col">
+                        <div class="card" style={{ width: "20rem" }}>
+                          <Link to="/viewsinglework">
+                            <img
+                              src={`${url}/${a.file?.filename}`}
+                              class="card-img-top"
+                              alt="..."
+                              width="300px"
+                              height="200px"
+                            />
+                          </Link>
 
-                <div class="col-6 gallery-col" >
+                          <div class="artdesc">
+                            <div className="productdet">
+                              <h1
+                                class="card-text1"
+                                style={{
+                                  width: "100px",
+                                  whiteSpace: "nowrap",
+                                  overflow: "hidden",
+                                  textOverflow: "ellipsis",
+                                }}
+                              >
+                                {a?.name}
+                              </h1>
+                              <h3 id="card-text2">
+                                <button>ADD TO CART</button>
+                              </h3>
+                            </div>
 
+                            <div className="product-pricetag">
+                              <h1> ₹ {a?.price} </h1>
+                            </div>
 
+                            <Link to="/user_chat">
+                              <div className="gallery-artistprofile">
+                                <img src={artistimg} />
+                              </div>
+                            </Link>
+
+                            <div className="gallery-chat-icon">
+                              <Link to="/user_chat">
+                                {" "}
+                                <Icon
+                                  icon="fluent:chat-32-filled"
+                                  className="gallery-chat"
+                                />{" "}
+                              </Link>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div>No Works Available</div>
+                )}
+
+                {/*                 
+
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
+                      </div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
                 </div>
-                <div class="col-6 gallery-col" >
-
-
+                <div class="col-6 gallery-col">
                   <div class="card" style={{ width: "20rem" }}>
                     <Link to="/viewsinglework">
                       <img src={product} class="card-img-top" alt="..." />
                     </Link>
 
-
-
                     <div class="artdesc">
-                      <div className='productdet'>
+                      <div className="productdet">
                         <h1 class="card-text1">Lumiere</h1>
                         <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
+                          <button>ADD TO CART</button>
                         </h3>
                       </div>
 
-                      <div className='product-pricetag'>
+                      <div className="product-pricetag">
                         <h1> ₹ 500 </h1>
-
                       </div>
 
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
+                      <Link to="/user_chat">
+                        <div className="gallery-artistprofile">
                           <img src={artistimg} />
                         </div>
                       </Link>
 
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
-                    </div>
-
-                  </div>
-
-
-
-
-
-
-
-                </div>
-                <div class="col-6 gallery-col" >
-
-
-                  <div class="card" style={{ width: "20rem" }}>
-                    <Link to="/viewsinglework">
-                      <img src={product} class="card-img-top" alt="..." />
-                    </Link>
-
-
-
-                    <div class="artdesc">
-                      <div className='productdet'>
-                        <h1 class="card-text1">Lumiere</h1>
-                        <h3 id="card-text2">
-                          <button>
-                            ADD TO CART
-                          </button>
-                        </h3>
+                      <div className="gallery-chat-icon">
+                        <Link to="/user_chat">
+                          {" "}
+                          <Icon
+                            icon="fluent:chat-32-filled"
+                            className="gallery-chat"
+                          />{" "}
+                        </Link>
                       </div>
-
-                      <div className='product-pricetag'>
-                        <h1> ₹ 500 </h1>
-
-                      </div>
-
-
-
-                      <Link to="/user_chat" >
-                        <div className='gallery-artistprofile'>
-                          <img src={artistimg} />
-                        </div>
-                      </Link>
-
-
-
-                      <div className='gallery-chat-icon'><Link to="/user_chat"> <Icon icon="fluent:chat-32-filled" className="gallery-chat" /> </Link></div>
                     </div>
-
                   </div>
-
-
-
-
-
-
-
-                </div>
-
-
-
+                </div> */}
               </div>
             </div>
-
           </div>
         </div>
-
-
 
         {/* <section id="featured-artist">
 
@@ -464,7 +407,7 @@ function Gallery() {
       </div>
       <Footer />
     </>
-  )
+  );
 }
 
-export default Gallery
+export default Gallery;

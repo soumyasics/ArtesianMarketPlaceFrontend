@@ -51,13 +51,13 @@ const handleLogout = () => {
   <div class="container-fluid">
   <img style={{ cursor: "pointer"}}
           src={logo}
-          onClick={() => navigate("/")}
+          onClick={() => navigate("")}
           alt="Logo"      
     
           id="logo"/>
     
     <form class="d-flex usernav-links" role="search">
-      <p><Link>Home</Link></p>
+      <p><Link to="/homepage_user">Home</Link></p>
       <p><Link to ="/aboutus">About</Link></p>
       <p><Link to ="/view_artists">Artist</Link></p>
       <p><Link to ="/gallery">Gallery</Link></p>

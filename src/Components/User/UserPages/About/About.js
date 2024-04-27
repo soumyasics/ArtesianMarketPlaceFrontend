@@ -9,10 +9,10 @@ import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg"
 import Usernav from '../../../Navbar/Usernav'
 import NavMain from '../../../Navbar/NavMain'
 
-function About() {
+function About({url}) {
     return (
         <>
-            <NavMain/>
+            <NavMain url={url} />
 
             <section className='Cover-img'>
                 <h1>About</h1>

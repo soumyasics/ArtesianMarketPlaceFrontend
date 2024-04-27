@@ -46,6 +46,8 @@ import ViewSingleWork from "./Components/User/UserPages/Artists/ViewSingleWork";
 import UserChat from "./Components/User/UserPages/Chat/UserChat";
 import AdminViewAgentRequest from "./Components/Admin/Pages/AdminViewAgentRequest";
 import AdminViewRequestedAgent from "./Components/Admin/Pages/AdminViewRequestedAgent";
+import Editwork from "./Components/Artist/Pages/Works/Editwork";
+import Homepage from "./Components/User/UserPages/Homepage";
 
 
 const url = "http://localhost:4004";
@@ -82,20 +84,23 @@ function App() {
 
           <Route path="/user_messages" element={<Notification />} />
           <Route path="/user_dashboard" element={<Dashboard />} />
-          <Route path="/aboutus" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
+          <Route path="/aboutus" element={<About url={url} />} />
+          <Route path="/gallery" element={<Gallery url={url} />} />
           {/* <Route path="/user_profile" element={<UserProfile url={url}/>} /> */}
           <Route path="/user_cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order_confirmed" element={<OrderConfirm />} />
-          <Route path="/user_notification" element={<NotificationMain />} />
+          <Route path="/user_notification" element={<NotificationMain/>}/>
           <Route path="/user_messages" element={<Notification />} />
           <Route path="/user_dashboard" element={<Dashboard />} />
           <Route path="/aboutus" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/view_artists" element={<ViewArtists />} />
-          <Route path="/view_artistworks" element={<IndividualArtistWorks />} />
+          <Route path="/gallery" element={<Gallery url={url}/>} />
+          <Route path="/view_artists" element={<ViewArtists url={url}/>} />
+          <Route path="/view_artistworksindividual" element={<IndividualArtistWorks url={url} />} />
           <Route path="/view_orders" element={<UserOrders />} />
+
+
+          <Route path="/homepage_user" element={<Homepage url={url}/>}/>
 
           {/* Artist */}
 
@@ -104,8 +109,9 @@ function App() {
           <Route path="/artist_register" element={<ArtistRegistration />} />
           <Route path="/artist_orders" element={<ArtistOrdrers />} />
           <Route path="/artist_profile" element={<ArtistProfile url={url}/>} />
-          <Route path="/artist_works" element={<ArtistWorks />} />
+          <Route path="/artist_works" element={<ArtistWorks url={url} />} />
           <Route path="/artist_chat" element={<ArtistChat />} />
+          <Route path="/artist_editprofile/:id" element={<Editwork url={url}/>} />
 
           {/* DeliveryAgent */}
 
