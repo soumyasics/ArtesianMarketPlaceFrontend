@@ -14,7 +14,7 @@ function Editwork({url}) {
     const [edit,setEdit]=useState({
         name:"",
         price:"",
-        image:"",
+        file:null,
         artistId:id
 
     })
@@ -28,40 +28,54 @@ function Editwork({url}) {
             console.log(err);
         })
     },[])
+    // const handleChange = (e) => {
+    //     if (e.target.name === "image") {
+    //       const file = e.target.files[0];
+    //       setEdit({ ...edit, [e.target.name]: file });
+    //     } else {
+    //       setEdit({ ...edit, [e.target.name]: e.target.value });
+    //     }
+    //   };
     const handleChange = (e) => {
-        if (e.target.name === "image") {
-          const file = e.target.files[0];
-          setEdit({ ...edit, [e.target.name]: file });
-        } else {
-          setEdit({ ...edit, [e.target.name]: e.target.value });
-        }
-      };
+      if (e.target.name === "file") {
+        const file = e.target.files[0];
+        setEdit({ ...edit, file });
+      } else {
+        setEdit({ ...edit, [e.target.name]: e.target.value });
+      }
+    };
+    
       console.log(edit);
 const navigate=useNavigate()
 
-const updatefn = () => {
-    if (edit.price <= 0) {
-        toast.error("Price must be greater than 0");
-        return;
-    }
-    axiosInstance.post(`/editArtWorkById/${id}`, edit, {
-        headers: {
-            "Content-Type": "multipart/form-data",
-        },
-    })
-    .then((res) => {
-        if (res.data.status === 200) {
-            toast.success("Updated successfully");
-            navigate("/artist_works");
-        } else {
-            toast.error(res.data.msg);
-        }
-    })
-    .catch((err) => {
-        console.log(err);
-    });
+const updatefn = (e) => {
+  e.preventDefault(); 
+  if (edit.price <= 0) {
+      toast.error("Price must be greater than 0");
+      return;
+  }
+  const formData = new FormData();
+  formData.append("name", edit.name);
+  formData.append("price", edit.price);
+  formData.append("image", edit.file);
+  axiosInstance.post(`/editArtWorkById/${id}`, formData,{
+    headers: {
+      "Content-Type": "multipart/form-data",
+    },
+  })
+  .then((res) => {
+      if (res.data.status === 200) {
+          toast.success("Updated successfully");
+           navigate("/artist_works");
+      } else {
+          toast.error(res.data.msg);
+      }
+  })
+  .catch((err) => {
+      console.log(err);
+  });
 };
-  return (
+return (
     <>
           <div className="ArtistWorks">
         <div className="row">
@@ -98,7 +112,7 @@ const updatefn = () => {
                 <div className="works-files">
                   <input
                     type="file"
-                    name="image"
+                    name="file"
                     onChange={handleChange}
                   />
                 </div>

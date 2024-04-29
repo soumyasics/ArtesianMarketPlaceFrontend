@@ -49,7 +49,7 @@ const navigate=useNavigate()
         toast.success("Login Succesfully")
         localStorage.setItem("userid",res.data.data._id)
         console.log("userid",res.data.data._id);
-        navigate("/homepage_user")
+        navigate("/")
         
       }
       else if(res.data.status==500){

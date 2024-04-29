@@ -64,27 +64,27 @@ function ArtistProfile({ url }) {
     setEditMode(true);
 };
 
-// const handleChange = (e) => {
-//   if (e.target.type === 'file') {
-//       const file = e.target.files[0];
-//       setEditedProfile({ ...editedProfile, [e.target.name]: file });
-//   } else {
-//       setEditedProfile({ ...editedProfile, [e.target.name]: e.target.value });
-//   }
-// };
 const handleChange = (e) => {
   if (e.target.type === 'file') {
       const file = e.target.files[0];
-      const formData = new FormData();
-      formData.append(e.target.name, file);
-      setEditedProfile((prevProfile) => ({
-        ...prevProfile,
-        image: formData,
-      }));
+      setEditedProfile({ ...editedProfile, [e.target.name]: file });
   } else {
       setEditedProfile({ ...editedProfile, [e.target.name]: e.target.value });
   }
 };
+// const handleChange = (e) => {
+//   if (e.target.type === 'file') {
+//       const file = e.target.files[0];
+//       const formData = new FormData();
+//       formData.append(e.target.name, file);
+//       setEditedProfile((prevProfile) => ({
+//         ...prevProfile,
+//         image: formData,
+//       }));
+//   } else {
+//       setEditedProfile({ ...editedProfile, [e.target.name]: e.target.value });
+//   }
+// };
 
 console.log(editedProfile);
 
