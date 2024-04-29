@@ -78,7 +78,7 @@ function App() {
           <Route path="/user_register" element={<UserRegistration />} />
           <Route path="/user_forgetpassword" element={<UserForgetPassword />} />
           <Route path="/user_profile" element={<UserProfile url={url} />} />
-          <Route path="/user_cart" element={<Cart />} />
+          <Route path="/user_cart" element={<Cart url={url}/>} />
 
           <Route path="/user_notification" element={<NotificationMain />} />
 
@@ -87,7 +87,7 @@ function App() {
           <Route path="/aboutus" element={<About url={url} />} />
           <Route path="/gallery" element={<Gallery url={url} />} />
           {/* <Route path="/user_profile" element={<UserProfile url={url}/>} /> */}
-          <Route path="/user_cart" element={<Cart />} />
+          {/* <Route path="/user_cart" element={<Cart url={url} />} /> */}
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/order_confirmed" element={<OrderConfirm />} />
           <Route path="/user_notification" element={<NotificationMain/>}/>
@@ -98,9 +98,11 @@ function App() {
           <Route path="/view_artists" element={<ViewArtists url={url}/>} />
           <Route path="/view_artistworksindividual" element={<IndividualArtistWorks url={url} />} />
           <Route path="/view_orders" element={<UserOrders />} />
+          <Route path="/viewsinglework_art/:id" element={<ViewSingleWork url={url}/>}/>
 
 
-          <Route path="/homepage_user" element={<Homepage url={url}/>}/>
+
+          <Route path="/" element={<Homepage url={url}/>}/>
 
           {/* Artist */}
 

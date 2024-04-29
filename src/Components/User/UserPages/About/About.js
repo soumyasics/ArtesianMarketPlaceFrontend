@@ -9,11 +9,19 @@ import artistimg from "../../../../Assets/aubrey-graham-photo-u164.jpg"
 import Usernav from '../../../Navbar/Usernav'
 import NavMain from '../../../Navbar/NavMain'
 
+
 function About({url}) {
+    const id=localStorage.getItem("userid")
+    console.log(id);
+
     return (
         <>
-            <NavMain url={url} />
-
+        {id?(
+            <Usernav url={url} />
+        ):(
+            <Navbar/>
+        )
+        }
             <section className='Cover-img'>
                 <h1>About</h1>
             </section>

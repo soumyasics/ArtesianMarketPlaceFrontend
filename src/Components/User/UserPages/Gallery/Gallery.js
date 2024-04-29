@@ -9,12 +9,16 @@ import Usernav from "../../../Navbar/Usernav";
 import NavMain from "../../../Navbar/NavMain";
 import { Link } from "react-router-dom";
 import axiosInstance from "../../../../Schemas/BaseUrl";
+import { toast } from "react-toastify";
 function Gallery({ url }) {
+
+  const userid=localStorage.getItem("userid")
+  // console.log("userid"+userid);
+
   const [art, setArt] = useState([]);
 
   useEffect(() => {
-    axiosInstance
-      .post(`viewArtworks`)
+    axiosInstance.post(`viewArtworks`)
       .then((res) => {
         console.log(res);
         setArt(res.data.data);
@@ -23,6 +27,30 @@ function Gallery({ url }) {
         console.log(err);
       });
   }, []);
+
+
+  // const[cart,setCart]=useState({
+  //   userid:userid,
+  //   artid:"",
+  //   artistId:""
+  // })
+
+  const cartfn=((artid,artistId)=>{
+    axiosInstance.post(`addCart`, {
+      userid: userid,
+      artid: artid,
+      artistId: artistId
+    })
+    .then((res)=>{
+      // console.log(res);
+      if(res.data.status==200){
+        toast.success("Cart added successfully")
+      }
+    })
+    .catch((error) => {
+      console.error("Error adding to cart:", error);
+    });
+  })
 
   return (
     <>
@@ -54,7 +82,7 @@ function Gallery({ url }) {
                     return (
                       <div class="col-6 gallery-col">
                         <div class="card" style={{ width: "20rem" }}>
-                          <Link to="/viewsinglework">
+                          <Link to={`/viewsinglework_art/${a._id}`}>
                             <img
                               src={`${url}/${a.file?.filename}`}
                               class="card-img-top"
@@ -78,7 +106,9 @@ function Gallery({ url }) {
                                 {a?.name}
                               </h1>
                               <h3 id="card-text2">
-                                <button>ADD TO CART</button>
+                                <button
+                                onClick={() => cartfn(a._id, a.artistId._id)}
+                                 >ADD TO CART</button>
                               </h3>
                             </div>
 
@@ -88,7 +118,7 @@ function Gallery({ url }) {
 
                             <Link to="/user_chat">
                               <div className="gallery-artistprofile">
-                                <img src={artistimg} />
+                                <img src={`${url}/${a?.artistId?.image.filename}`} alt="artist" />
                               </div>
                             </Link>
 

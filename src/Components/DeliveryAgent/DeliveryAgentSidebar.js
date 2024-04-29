@@ -1,9 +1,27 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 import { Icon } from '@iconify/react';
 
 
 function DeliveryAgentSidebar() {
+  const deliveryid=localStorage.getItem("deliveryid")
+  console.log(deliveryid);
+
+  const[readerid,setReaderid]=useState(null);
+
+  const handleLogout = () => {
+    localStorage.removeItem("deliveryid");
+    setReaderid(null);
+  };
+
+  const navigate=useNavigate()
+
+  useEffect(() => {
+    if (localStorage.getItem("deliveryid") == null) {
+      navigate("/delivery_agent_login");
+    }
+  });
+
   return (
     <div>
         <div id="wrapper">
@@ -24,6 +42,10 @@ function DeliveryAgentSidebar() {
             <li>
               <Link to="/delivery_agent_profile">Profile</Link>
             </li>
+            <li  onClick={handleLogout}>
+              <Link >Logout</Link>
+            </li>
+
 
           </ul>
         </div>

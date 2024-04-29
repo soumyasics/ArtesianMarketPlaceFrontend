@@ -29,8 +29,19 @@ function Usernav({url}) {
       })
   },[])
 
-console.log(`${url}/${data.image?.filename}`);
+console.log(`${url}/${data?.image?.filename}`);
 
+
+
+
+const[readerid,setReaderid]=useState(null);
+
+const handleLogout = () => {
+  localStorage.removeItem("userid");
+  navigate("/")
+  setReaderid(null);
+
+};
 
 useEffect(() => {
   if (localStorage.getItem("userid") == null) {
@@ -38,13 +49,6 @@ useEffect(() => {
   }
 });
 
-
-const[readerid,setReaderid]=useState(null);
-
-const handleLogout = () => {
-  localStorage.removeItem("userid");
-  setReaderid(null);
-};
 
   return (
 <nav id='common-home-navbar' class="navbar bg-body-tertiary">
@@ -57,7 +61,7 @@ const handleLogout = () => {
           id="logo"/>
     
     <form class="d-flex usernav-links" role="search">
-      <p><Link to="/homepage_user">Home</Link></p>
+      <p><Link to="/">Home</Link></p>
       <p><Link to ="/aboutus">About</Link></p>
       <p><Link to ="/view_artists">Artist</Link></p>
       <p><Link to ="/gallery">Gallery</Link></p>
@@ -68,7 +72,7 @@ const handleLogout = () => {
 
  <div id="nav-profileimg" class="dropdown ">
  
- <img src={`${url}/${data.image?.filename}`}  className="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"/>
+ <img src={`${url}/${data?.image?.filename}`}  className="dropdown-toggle " data-bs-toggle="dropdown" aria-expanded="false"/>
  
  <ul class="dropdown-menu dropdownbackg">
    <li><Link to="/user_profile" class="dropdown-item ">Profile</Link></li>

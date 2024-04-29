@@ -29,9 +29,9 @@ function Footer() {
 
                 <div className='footer-links'>
 
-                    <p><Link>Home</Link></p>
+                    {/* <p><Link>Home</Link></p>
                     <p><Link>About</Link></p>
-                    <p><Link>Gallery</Link></p>
+                    <p><Link>Gallery</Link></p> */}
 
                 </div>
 

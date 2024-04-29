@@ -86,7 +86,7 @@ function Navbar() {
           id="logo"/>
     
     <form class="d-flex usernav-links" role="search">
-      <p><Link>Home</Link></p>
+      <p><Link to="/">Home</Link></p>
       <p><Link to ="/aboutus">About</Link></p>
       <p><Link to ="/user_login">Login</Link></p>
 
