@@ -52,6 +52,31 @@ function Gallery({ url }) {
     });
   })
 
+
+
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSearch = async () => {
+    try {
+      const response = await axiosInstance.post(
+        `/searchartByName/${searchTerm}`
+      );
+      setSearchResults(response.data);
+      setErrorMessage("");
+      console.log(response.data);
+    } catch (error) {
+      if (error.response && error.response.status === 404) {
+        setSearchResults([]);
+        setErrorMessage("No services found with the given name.");
+      } else {
+        setErrorMessage("Server error. Please try again later.");
+      }
+    }
+  };
+
+
   return (
     <>
       <NavMain url={url} />
@@ -64,8 +89,23 @@ function Gallery({ url }) {
         <h1>SEARCH</h1>
 
         <div className="gallery-search">
-          <input type="text" placeholder="Work Name / Artist Name" />
-          <button>Search</button>
+          <input type="text" placeholder="Work Name"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+          
+           />
+          <button onClick={handleSearch}>Search</button>
+          {errorMessage && <p>{errorMessage}</p>}
+            <div id="service-search" >
+              {searchResults.map((service) => (
+                <div  className=" viewservices_search" style={{paddingLeft:"30px"}}  >
+                 <Link to={`/viewsinglework_art/${service._id}`}
+                  style={{textDecoration:"none",color:"black"}}> 
+                  <p className="ri-search-line" >{service.name}</p>
+                  </Link> 
+                </div>
+              ))}
+          </div>
         </div>
 
         <div className="explore-gallery">
@@ -121,8 +161,8 @@ function Gallery({ url }) {
                                 <img src={`${url}/${a?.artistId?.image.filename}`} alt="artist" />
                               </div>
                             </Link>
-
-                            <div className="gallery-chat-icon">
+                            {/* Chat icon  */}
+                            {/* <div className="gallery-chat-icon">
                               <Link to="/user_chat">
                                 {" "}
                                 <Icon
@@ -130,7 +170,7 @@ function Gallery({ url }) {
                                   className="gallery-chat"
                                 />{" "}
                               </Link>
-                            </div>
+                            </div> */}
                           </div>
                         </div>
                       </div>
