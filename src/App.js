@@ -48,6 +48,7 @@ import AdminViewAgentRequest from "./Components/Admin/Pages/AdminViewAgentReques
 import AdminViewRequestedAgent from "./Components/Admin/Pages/AdminViewRequestedAgent";
 import Editwork from "./Components/Artist/Pages/Works/Editwork";
 import Homepage from "./Components/User/UserPages/Homepage";
+import Payment from "./Components/User/Payment";
 
 
 const url = "http://localhost:4004";
@@ -97,9 +98,9 @@ function App() {
           <Route path="/gallery" element={<Gallery url={url}/>} />
           <Route path="/view_artists" element={<ViewArtists url={url}/>} />
           <Route path="/view_artistworksindividual" element={<IndividualArtistWorks url={url} />} />
-          <Route path="/view_orders" element={<UserOrders />} />
+          <Route path="/view_orders" element={<UserOrders url={url}/>} />
           <Route path="/viewsinglework_art/:id" element={<ViewSingleWork url={url}/>}/>
-
+          <Route path="/payment/:id" element={<Payment url={url}/>}/>
 
 
           <Route path="/" element={<Homepage url={url}/>}/>
@@ -109,7 +110,7 @@ function App() {
           <Route path="/artist_login" element={<Login data="artist" />} />
           <Route path="/artist_forgetpassword" element={<ArtistForgetPassword />}/>
           <Route path="/artist_register" element={<ArtistRegistration />} />
-          <Route path="/artist_orders" element={<ArtistOrdrers />} />
+          <Route path="/artist_orders" element={<ArtistOrdrers url={url}/>} />
           <Route path="/artist_profile" element={<ArtistProfile url={url}/>} />
           <Route path="/artist_works" element={<ArtistWorks url={url} />} />
           <Route path="/artist_chat" element={<ArtistChat />} />

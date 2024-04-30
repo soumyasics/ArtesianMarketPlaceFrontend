@@ -4,7 +4,7 @@ import workimg from "../../../../Assets/Rectangle 12.png"
 import "./ViewSingleWork.css"
 import { Icon } from "@iconify/react";
 import Footer from '../../../Footer/Footer';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import axiosInstance from '../../../../Schemas/BaseUrl';
 import { toast } from 'react-toastify';
 function ViewSingleWork({url}) {
@@ -68,7 +68,7 @@ function ViewSingleWork({url}) {
 
                         </div>
                         <div className='viewsingleworkbtn2'>
-                            <button> <Icon icon="carbon:flash" className="billingicon" /> BUY NOW</button>
+                            <Link to={`/payment/${art._id}`} ><button> <Icon icon="carbon:flash" className="billingicon" /> BUY NOW</button></Link>
 
                         </div>
 

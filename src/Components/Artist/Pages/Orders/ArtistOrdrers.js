@@ -1,11 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import ArtistSidebar from '../../ArtistSidebar'
 import Table from "react-bootstrap/Table";
 import "./ArtistOrders.css";
 import { Icon } from "@iconify/react";
 import workimg from "../../../../Assets/Rectangle 12.png"
+import axiosInstance from '../../../../Schemas/BaseUrl';
 
-function ArtistOrdrers() {
+function ArtistOrdrers({url}) {
+  const artistid=localStorage.getItem("artistid")
+  console.log(artistid);
+
+  const[order,setOrder]=useState([])
+
+  useEffect(()=>{
+    axiosInstance.post(`viewOrderByArtist/${artistid}`)
+    .then((res)=>{
+      console.log(res);
+      setOrder(res.data.data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  },[])
+
   return (
     <>
     
@@ -41,23 +58,29 @@ function ArtistOrdrers() {
                   </tr>
                 </thead>
                 <tbody  >
+                {order.length ? (
+                  order.map((a,index) => {
+                    return (
+
         
-                      <tr >
-                        <td>1</td>
+                      <tr key={index} >
+                        <td>{index+1}</td>
                         <td id='workorders'>
-                         
-                         <img src={workimg}/>
-                         <p>Work Name </p>
+                         <img src={`${url}/${a?.artid?.file?.filename}`}/>
+                         <p>{a?.artid?.name} </p>
                          </td>
-                        <td>Lumiere</td>
-                        <td>250</td>
+                        <td>{a?.userid?.firstname}</td>
+                        <td>{a?.artid?.price}</td>
                         <td>Fulfiled</td>
                         <td>Dtdc</td>
-                        
-                       
-                      
                       </tr>
-                     
+                                         );
+                                        })
+                                      ) : (
+                                        <div>No Works Available</div>
+                                      )}
+                      
+                      
                 
                 </tbody>
               </Table>
