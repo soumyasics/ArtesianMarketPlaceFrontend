@@ -77,7 +77,7 @@ useEffect(() => {
  <ul class="dropdown-menu dropdownbackg">
    <li><Link to="/user_profile" class="dropdown-item ">Profile</Link></li>
    <li><Link to="/user_dashboard" class="dropdown-item ">Dashboard</Link></li>
-   <li><Link to="/user_notification" class="dropdown-item ">Notification</Link></li>
+   {/* <li><Link to="/user_notification" class="dropdown-item ">Notification</Link></li> */}
    <li><Link to="/user_cart" class="dropdown-item ">Cart</Link></li>
    <li><Link to="/view_orders" class="dropdown-item ">My Orders</Link></li>
    <li><hr class="dropdown-divider"/></li>

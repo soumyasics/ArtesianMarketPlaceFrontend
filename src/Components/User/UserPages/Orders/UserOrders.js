@@ -31,7 +31,7 @@ function UserOrders({url}) {
   useEffect(() => {
     const calculateTotalPrice = () => {
       let sum = 0;
-      order.forEach((a) => {
+      order?.forEach((a) => {
         sum += a?.artid?.price || 0; 
       });
       setTotalPrice(sum); 
@@ -84,7 +84,7 @@ function UserOrders({url}) {
 
             <tbody>
 
-            {order.length ? (
+            {order && order.length ? (
                   order.map((a) => {
                     return (
 

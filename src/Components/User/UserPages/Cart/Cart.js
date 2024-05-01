@@ -53,7 +53,7 @@ function Cart({ url }) {
   useEffect(() => {
     const calculateTotalPrice = () => {
       let sum = 0;
-      art.forEach((a) => {
+      art?.forEach((a) => {
         sum += a?.artid?.price || 0; 
       });
       setTotalPrice(sum); 
@@ -102,7 +102,7 @@ function Cart({ url }) {
                 </tr>
               </thead>
               <tbody>
-                {art.length ? (
+                {art && art.length ? (
                   art.map((a) => {
                     return (
                       <tr>
