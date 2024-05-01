@@ -84,7 +84,7 @@ function App() {
           <Route path="/user_notification" element={<NotificationMain />} />
 
           <Route path="/user_messages" element={<Notification />} />
-          <Route path="/user_dashboard" element={<Dashboard />} />
+          <Route path="/user_dashboard" element={<Dashboard url={url}/>} />
           <Route path="/aboutus" element={<About url={url} />} />
           <Route path="/gallery" element={<Gallery url={url} />} />
           {/* <Route path="/user_profile" element={<UserProfile url={url}/>} /> */}
@@ -93,7 +93,7 @@ function App() {
           <Route path="/order_confirmed" element={<OrderConfirm />} />
           <Route path="/user_notification" element={<NotificationMain/>}/>
           <Route path="/user_messages" element={<Notification />} />
-          <Route path="/user_dashboard" element={<Dashboard />} />
+          {/* <Route path="/user_dashboard" element={<Dashboard url={url} />} /> */}
           <Route path="/aboutus" element={<About />} />
           <Route path="/gallery" element={<Gallery url={url}/>} />
           <Route path="/view_artists" element={<ViewArtists url={url}/>} />
@@ -121,8 +121,8 @@ function App() {
           <Route path="/delivery_agent_login" element={<Login data="deliveryAgent" />}/>
           <Route path="/delivery_agent_forgetpassword" element={<DeliveryAgentForgetPassword />}/>
           <Route path="/delivery_agent_register" element={<DeliveryAgentRegister />} />
-          <Route path="/delivery_agent_routes" element={<DeliveryRoutes />} />
-          <Route path="/delivery_agent_jobs" element={<DeliveryJobs />} />
+          <Route path="/delivery_agent_routes" element={<DeliveryRoutes url={url}/>} />
+          <Route path="/delivery_agent_jobs" element={<DeliveryJobs url={url} />} />
           <Route path="/delivery_agent_profile" element={<DeliveryAgent_Profile />}/>
         </Routes>
       </div>

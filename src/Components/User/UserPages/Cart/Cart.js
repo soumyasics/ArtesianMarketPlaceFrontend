@@ -23,6 +23,7 @@ function Cart({ url }) {
   console.log(userid);
 
   const [art, setArt] = useState([]);
+  const [cartitems, setCartItems] = useState([]);
 
   useEffect(() => {
     axiosInstance
@@ -30,11 +31,35 @@ function Cart({ url }) {
       .then((res) => {
         console.log(res);
         setArt(res.data.data);
+        const mappedCartItems = res.data.data.map((item) => ({
+          userid: userid,
+          artid: item.artid._id,
+          artistId: item.artid.artistId, 
+        }));
+        setCartItems(mappedCartItems);
       })
       .catch((err) => {
         console.log(err);
       });
   }, []);
+
+  const handleCheckout = () => {
+    // Call your addOrderFromCart API with cartitems data
+    axiosInstance
+      .post("addOrderFromCart", { cartitems })
+      .then((res) => {
+        if (res.data.status === 200) {
+          toast.success("Order placed successfully");
+          // navigate("/checkout");
+        } else {
+          toast.error("Failed to place order");
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Error occurred while placing order");
+      });
+  };
 
   const buttonStyle = {
     padding: '10px 20px',
@@ -66,6 +91,7 @@ function Cart({ url }) {
   const removecartfn=((itemid)=>{
     axiosInstance.post(`deleteCartById/${itemid}`)
     .then((res)=>{
+      console.log(res);
       if(res.data.status==200){
         toast.success("Item removed successfully")
         window.location.reload()
@@ -75,6 +101,9 @@ function Cart({ url }) {
       console.log(err);
     })
   })
+
+  //order from cart
+
 
   return (
     <>
@@ -134,10 +163,6 @@ function Cart({ url }) {
                   <div>No Works Available</div>
                 )}
 
-                {/* <tr>
-                  <td id="cartitemscolb"><img src={itemimg} alt='item-img' /><h3>Lumiere</h3></td>
-                  <td id='bold'><span>₹</span>1000</td>
-                </tr> */}
               </tbody>
             </table>
 
@@ -152,10 +177,13 @@ function Cart({ url }) {
 
         <div className="itemdelivery">
           <input type="checkbox" />
-          <label>Need Delivery</label>
+          {/* <label>Need Delivery</label> */}
         </div>
+        <div className="cart-btn">
+              <button type="submit" onClick={handleCheckout}>CHECKOUT</button>
+            </div>
 
-        <div className="cart-shipping-address">
+        {/* <div className="cart-shipping-address">
           <h1>ENTER SHIPPING DETAILS</h1>
           <p>
             We provide the tools and support to help your artistic compass guide
@@ -188,7 +216,7 @@ function Cart({ url }) {
             </div>
           </form>
         </div>
-
+ */}
         {/* <section id="featured-artist">
 
 <h1>Featured Artist</h1>

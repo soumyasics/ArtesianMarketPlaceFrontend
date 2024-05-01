@@ -39,9 +39,9 @@ function DeliveryAgentRegister() {
         console.log(res);
         if (res.data.status === 200) {
           toast.success("Registration Successful");
-          // localStorage.setItem("userid",res.data.data._id)
-          // console.log(res.data.data._id);
-          // navigate("/artist_login")
+          localStorage.setItem("userid",res.data.data._id)
+          console.log(res.data.data._id);
+          navigate("/artist_login")
         } else {
           toast.warn("This user has already been registered");
         }

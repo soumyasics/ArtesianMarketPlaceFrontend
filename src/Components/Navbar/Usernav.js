@@ -9,7 +9,7 @@ import { toast } from 'react-toastify'
 
 
 function Usernav({url}) {
-  console.log(url,"hello");
+  console.log(url,"hello url");
   // const url = "http://localhost:4004";
 
     const navigate = useNavigate()

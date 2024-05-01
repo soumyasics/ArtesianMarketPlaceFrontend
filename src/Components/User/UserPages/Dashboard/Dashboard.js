@@ -1,14 +1,28 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Dasshboard.css"
 import Navbar from '../../../Navbar/Navbar'
 import Footer from '../../../Footer/Footer'
 import Usernav from '../../../Navbar/Usernav'
 import NavMain from '../../../Navbar/NavMain'
+import axiosInstance from '../../../../Schemas/BaseUrl'
 
-function Dashboard() {
+function Dashboard({url}) {
+  const userid=localStorage.getItem("userid")
+  console.log(userid);
+  const[order,setOrder]=useState([])
+  useEffect(()=>{
+    axiosInstance.post(`vieworderByUserid/${userid}`)
+    .then((res)=>{
+      console.log(res);
+      setOrder(res.data.data)
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  },[])
   return (
     <>
-      <NavMain />
+      <NavMain url={url}/>
 
       <section className='Cover-img'>
         <h1>Dashboard</h1>
@@ -23,31 +37,42 @@ function Dashboard() {
               <tr >
                 <th width={"23.5%"}>Date (order)</th>
                 <th width={"23.5%"}>Exp (Delivery)</th>
-                <th width={"23.5%"}>QTY</th>
+                <th width={"23.5%"}>Delivery Agent Name and Contact</th>
                 <th width={"23.5%"}>Status</th>
                 <th width={"23.5%"}>Price</th>
               </tr>
             </thead>
             <tbody>
+            {order && order.length ? (
+                  order.map((a) => {
+                    const dateTime = new Date(a?.date);
+                    const dateOnly = dateTime.toISOString().split("T")[0];
+
+//                     const dateParts = a.expectedDeliveryDate.split('/');
+// const dateObject = new Date(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
+              
+                    return (
+
+
               <tr>
-                <td>12/11/2024</td>
-                <td>13/12/2024</td>
-                <td id="bold">1</td>
-                <td id='delivered'>Check</td>
-                <td id="bold"><span>₹</span> 500 </td>
+                <td>{dateOnly}</td>
+                <td>{a.expectedDeliveryDate}</td>
+                <td id="bold"> {a.deliveryId ? `${a.deliveryId.firstname}, ${a.deliveryId.contact}` : 'Order not picked up'} </td>
+                <td id='delivered'>{a?.deliveryStatus}</td>
+                <td id="bold"><span>₹</span> {a?.artid?.price} </td>
               </tr>
-              <tr>
-                <td>12/11/2024</td>
-                <td>13/12/2024</td>
-                <td id="bold">1</td>
-                <td id='delivered'>Check</td>
-                <td id="bold"><span>₹</span> 500 </td>
-              </tr>
+                                  );
+                                })
+                              ) : (
+                                <div>No Works Available</div>
+                              )}
+              
+
             </tbody>
           </table>
         </div>
 
-        <div className='dashboard-msgshipper'>
+        {/* <div className='dashboard-msgshipper'>
           <h2>Message Shipper</h2>
 
           <div className='dashboard-form'>
@@ -65,7 +90,7 @@ function Dashboard() {
          
 
 
-        </div>
+        </div> */}
 
       </div>
       <Footer />

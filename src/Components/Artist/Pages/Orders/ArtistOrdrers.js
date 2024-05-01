@@ -71,8 +71,8 @@ function ArtistOrdrers({url}) {
                          </td>
                         <td>{a?.userid?.firstname}</td>
                         <td>{a?.artid?.price}</td>
-                        <td>Fulfiled</td>
-                        <td>Dtdc</td>
+                        <td>{a?.deliveryStatus}</td>
+                        <td> {a.deliveryId ? `${a.deliveryId.firstname}, ${a.deliveryId.contact}` : 'Order not picked up'}</td>
                       </tr>
                                          );
                                         })

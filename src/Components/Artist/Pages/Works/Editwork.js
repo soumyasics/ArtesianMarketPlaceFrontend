@@ -75,6 +75,24 @@ const updatefn = (e) => {
       console.log(err);
   });
 };
+
+const deletefn=(()=>{
+  axiosInstance.post(`deleteArtWorkById/${id}`)
+  .then((res)=>{
+    if(res.data.status==200){
+      toast.success("Deleted successfully")
+      navigate("/artist_works")
+    }
+    else{
+      toast.warn(res.data.msg)
+    }
+  })
+  .catch((err)=>{
+    console.log(err);
+  })
+})
+
+
 return (
     <>
           <div className="ArtistWorks">
@@ -120,6 +138,10 @@ return (
                   <button type="submit">Save</button>
                 </div>
               </form>
+              <div >
+                  <button type="submit" className='btn btn-danger' style={{width:"140px"}} onClick={deletefn}>Delete</button>
+                </div>
+
             </div>
 
 </div>
