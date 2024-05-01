@@ -58,7 +58,7 @@ function ArtistOrdrers({url}) {
                   </tr>
                 </thead>
                 <tbody  >
-                {order.length ? (
+                {order && order.length ? (
                   order.map((a,index) => {
                     return (
 
