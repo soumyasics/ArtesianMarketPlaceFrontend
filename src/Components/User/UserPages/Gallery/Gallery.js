@@ -11,14 +11,14 @@ import { Link } from "react-router-dom";
 import axiosInstance from "../../../../Schemas/BaseUrl";
 import { toast } from "react-toastify";
 function Gallery({ url }) {
-
-  const userid=localStorage.getItem("userid")
+  const userid = localStorage.getItem("userid");
   // console.log("userid"+userid);
 
   const [art, setArt] = useState([]);
 
   useEffect(() => {
-    axiosInstance.post(`viewArtworks`)
+    axiosInstance
+      .post(`viewArtworks`)
       .then((res) => {
         console.log(res);
         setArt(res.data.data);
@@ -28,31 +28,29 @@ function Gallery({ url }) {
       });
   }, []);
 
-
   // const[cart,setCart]=useState({
   //   userid:userid,
   //   artid:"",
   //   artistId:""
   // })
 
-  const cartfn=((artid,artistId)=>{
-    axiosInstance.post(`addCart`, {
-      userid: userid,
-      artid: artid,
-      artistId: artistId
-    })
-    .then((res)=>{
-      // console.log(res);
-      if(res.data.status==200){
-        toast.success("Cart added successfully")
-      }
-    })
-    .catch((error) => {
-      console.error("Error adding to cart:", error);
-    });
-  })
-
-
+  const cartfn = (artid, artistId) => {
+    axiosInstance
+      .post(`addCart`, {
+        userid: userid,
+        artid: artid,
+        artistId: artistId,
+      })
+      .then((res) => {
+        // console.log(res);
+        if (res.data.status == 200) {
+          toast.success("Cart added successfully");
+        }
+      })
+      .catch((error) => {
+        console.error("Error adding to cart:", error);
+      });
+  };
 
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
@@ -76,7 +74,6 @@ function Gallery({ url }) {
     }
   };
 
-
   return (
     <>
       <NavMain url={url} />
@@ -89,22 +86,28 @@ function Gallery({ url }) {
         <h1>SEARCH</h1>
 
         <div className="gallery-search">
-          <input type="text" placeholder="Work Name"
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-          
-           />
+          <input
+            type="text"
+            placeholder="Work Name"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
           <button onClick={handleSearch}>Search</button>
           {errorMessage && <p>{errorMessage}</p>}
-            <div id="service-search" >
-              {searchResults.map((service) => (
-                <div  className=" viewservices_search" style={{paddingLeft:"30px"}}  >
-                 <Link to={`/viewsinglework_art/${service._id}`}
-                  style={{textDecoration:"none",color:"black"}}> 
-                  <p className="ri-search-line" >{service.name}</p>
-                  </Link> 
-                </div>
-              ))}
+          <div id="service-search">
+            {searchResults.map((service) => (
+              <div
+                className=" viewservices_search"
+                style={{ paddingLeft: "30px" }}
+              >
+                <Link
+                  to={`/viewsinglework_art/${service._id}`}
+                  style={{ textDecoration: "none", color: "black" }}
+                >
+                  <p className="ri-search-line">{service.name}</p>
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
 
@@ -117,7 +120,7 @@ function Gallery({ url }) {
           <div className="gallery-products">
             <div class="container text-center">
               <div class="row gallery-row">
-                {art.length ? (
+                {art && art.length ? (
                   art.map((a) => {
                     return (
                       <div class="col-6 gallery-col">
@@ -147,8 +150,10 @@ function Gallery({ url }) {
                               </h1>
                               <h3 id="card-text2">
                                 <button
-                                onClick={() => cartfn(a._id, a.artistId._id)}
-                                 >ADD TO CART</button>
+                                  onClick={() => cartfn(a._id, a.artistId._id)}
+                                >
+                                  ADD TO CART
+                                </button>
                               </h3>
                             </div>
 
@@ -158,7 +163,10 @@ function Gallery({ url }) {
 
                             <Link to="/user_chat">
                               <div className="gallery-artistprofile">
-                                <img src={`${url}/${a?.artistId?.image.filename}`} alt="artist" />
+                                <img
+                                  src={`${url}/${a?.artistId?.image.filename}`}
+                                  alt="artist"
+                                />
                               </div>
                             </Link>
                             {/* Chat icon  */}
